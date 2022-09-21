@@ -13,6 +13,7 @@ import Contactme from './pages/ContactMe/Contactme';
 function App() {
     return (
     <div>
+      <title>My Portfolio | About</title>
       <NavBar></NavBar>
       <Outlet></Outlet>
         <Routes>

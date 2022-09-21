@@ -1,11 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import "./ContactMe.css";
+import { Helmet } from "react-helmet";
 
 const Contactme = () => {
-  useEffect(() => document.title = "Contact Me", []);
-
   return (
     <div className="contact">
+      <Helmet>
+        <title>My Portfolio | Contact Me</title>
+      </Helmet>
       <h2>For any business inquiries I can be reached at these addresses</h2>
       <ul>
         <li>Phone#: (940) 783-0938</li>

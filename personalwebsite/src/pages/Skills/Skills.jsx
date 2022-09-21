@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import "./Skills.css";
 import langs from "../../assets/Languages/index";
+import { Helmet } from "react-helmet";
 
 const Skills = () => {
-  useEffect(() => document.title = "Skills", []);
-
   const [langList, setLangList] = useState(langs);
 
   return (
     <div>
+      <Helmet>
+      <title>Joshua Garst's Portfolio | Skills</title>
+      </Helmet>
       <h3 className="opening-line">I have learned many language this is a list of the ones I am most confident in</h3>
       <ul className ="skill-name-list">
       {langList.langNames.map((name, index)=>{
