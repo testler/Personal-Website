@@ -1,12 +1,18 @@
-
-h1, h2{
+.home-div{
+    text-align: center;
+    width: 100vw;
+    height: auto;
+}
+.home-text{
+    width: 100%;
     text-align: center;
     color: aliceblue;
 }
-section{
+.home-img{
     background-image: url("../../assets/closeUp.jpg");
-    margin-left: auto;
-    margin-right: auto;
-    width: 25vw;
-    height: 25vw;
+    background-size:contain;
+    display: block;
+    margin: 0 auto 0 auto;
+    width: 50vw;
+    height: 50vw;
 }

@@ -3,7 +3,7 @@ import "./Personal.css";
 
 const Personal = () => {
   return (
-    <div class="centered">
+    <div className="centered">
       <h1>Personal Life</h1>
       <img src="../../assets/closeUp.jpg" alt="my wife and I" />
       <p>I have lived most of my life in the Bentonville, Arkansas area.  I moved down to Denton, Texas, for four years, three years of that were high school, and that is where I first started learning Computer Science.  I also learned AC, DC, and Digital electrical engineering.  After graduating, I spent some time working minimum wage jobs and attending classes at the local community college when I could.  I wasn't satisfied working purely with my hands and barely using my brain.  That is when I decided to enroll and a software engineering boot camp and start my career doing the thing I love solving puzzles and using my brain.

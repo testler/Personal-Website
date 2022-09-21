@@ -1,0 +1,30 @@
+.opening-line{
+    color: aliceblue;
+    width: 100vw;
+    font-size: 4vw;
+}
+.skill-img{
+    height: auto;
+    width: 25vw;
+}
+.skill-name-list{
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+.skill-name{
+    list-style: disc;
+    margin: 0 5vw;
+    color:white;
+    font-size: 5vw;
+}
+.skill-list{
+    margin: 0 0;
+    padding: 0 0;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    text-decoration: none;
+    justify-content: center;
+}

@@ -3,13 +3,14 @@ import "./ProjectItem.css";
 
 const ProjectItem = ({url, projectName, image, description, DeploymentUrl}) => {
   return (
-    <section>
-        <a href={DeploymentUrl}>
-            <h3>{projectName}</h3>
-            <img src={image} alt={projectName} />
-        </a>
+    <section className="pi-item">
+        <h3 className="pi-title" href={DeploymentUrl}>{projectName}</h3>
+        <img href={DeploymentUrl} className="pi-img" src={image} alt={projectName} />
+        
+        <a   className="pi-p1" href={url}>
             <h5>{description}</h5>
-            <a href={url}>The code for the project on github</a>
+            <span className="git-link">The code for the project on github</span>
+        </a>
     </section>
   )
 }

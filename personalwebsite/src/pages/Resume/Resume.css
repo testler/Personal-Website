@@ -1,0 +1,12 @@
+.resume-div{
+    color: aliceblue;
+    
+}
+.resume-div > h1 > a{
+    text-decoration: none;
+    color: cyan;
+}
+#preview{
+    width: 98vw;
+    height: 85vh;
+}

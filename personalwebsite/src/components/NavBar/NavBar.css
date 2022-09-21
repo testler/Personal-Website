@@ -7,18 +7,18 @@ h1{
 }
 nav{
     display: flex;
-    justify-content:space-evenly;
+    flex-wrap: nowrap;
+    justify-content:space-between;
     align-items: center;
-    background-color: #676767;
-    height:min-content;
+    background-color: #1a1a1a;
+    width: auto;
 }
 #li{
+    text-decoration: none;
     height:fit-content;
     color: azure;
-    font-size: 2vw;
+    display:block;
+    width: fit-content;
     margin: 0%;
-    height:min-content;
-    background-color: azure;
-    font-size: 2vw;
-    height:min-content;
+    font-size: 3.5vw;
 }
