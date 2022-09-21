@@ -7,6 +7,8 @@ import p3Image from "../../assets/movieApp.png";
 
 
 const Projects = () => {
+  useEffect(() => document.title = "Projects", []);
+
   const [projectList, setProjectList] = useState([
     {
       projectName:"Cyber Defense",

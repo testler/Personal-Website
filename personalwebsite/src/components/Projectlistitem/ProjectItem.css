@@ -1,6 +1,6 @@
 .pi-img{
     width: 40vw;
-    height:fit-content;
+    height: auto;
     display: block;
 }
 .pi-p1{

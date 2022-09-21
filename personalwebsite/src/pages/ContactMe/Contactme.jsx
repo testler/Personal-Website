@@ -2,6 +2,8 @@ import React from 'react';
 import "./ContactMe.css";
 
 const Contactme = () => {
+  useEffect(() => document.title = "Contact Me", []);
+
   return (
     <div className="contact">
       <h2>For any business inquiries I can be reached at these addresses</h2>

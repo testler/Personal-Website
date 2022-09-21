@@ -3,6 +3,8 @@ import "./Home.css";
 import img from "../../assets/closeUp.jpg";
 
 const Home = () => {
+  useEffect(() => document.title = "Joshua Garst", []);
+
   return (
     <div className="home-div">
       <img className="home-img" src={img} alt="me" loading="lazy"/>

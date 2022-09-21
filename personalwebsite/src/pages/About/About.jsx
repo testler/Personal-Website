@@ -2,6 +2,7 @@ import React from 'react';
 import "./About.css";
 
 const About = () => {
+  useEffect(() => document.title = "About", []);
   return (
     <div className="about-div">
       <h1>About</h1>

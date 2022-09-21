@@ -3,6 +3,8 @@ import "./Skills.css";
 import langs from "../../assets/Languages/index";
 
 const Skills = () => {
+  useEffect(() => document.title = "Skills", []);
+
   const [langList, setLangList] = useState(langs);
 
   return (

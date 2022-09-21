@@ -5,6 +5,7 @@ import pdf from "../../assets/Joshua Garst Resume 1.pdf"
 import "./Resume.css";
 
 const Resume = () => {
+  useEffect(() => document.title = "Resume", []);
   function downloadFile(e){
     window.location = resume;
   };
