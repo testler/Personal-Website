@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import "./Personal.css";
 import image from "../../assets/closeUp.jpg";
 

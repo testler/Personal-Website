@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ProjectItem from '../../components/Projectlistitem/ProjectItem';
 import "./Projects.css";
 import p1Image from "../../assets/167258422-266730b5-c193-424a-9f5f-894dc745d465.png";
