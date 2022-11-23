@@ -2,7 +2,6 @@
     text-align: center;
 }
 .text-block{
-    display: block;
     width: 50%;
     float: right;
     display: flex;
@@ -35,6 +34,7 @@ h3.description{
     font-size: 2.5vw;
     font-size: clamp(1vw, 2vw, 1.5vh);
     align-self: flex-start;
+    height: fit-content;
 }
 ul{
     margin: 1vh;

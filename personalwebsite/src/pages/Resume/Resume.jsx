@@ -1,7 +1,7 @@
 import React from 'react'
 import { Helmet } from "react-helmet";
-import resume from "../../assets/Joshua Garst Resume.docx";
-import pdf from "../../assets/Joshua Garst Resume 1.pdf"
+import resume from "./Joshua Garst Resume.docx";
+import pdf from "./Joshua Garst Resume.pdf"
 import "./Resume.css";
 
 const Resume = () => {

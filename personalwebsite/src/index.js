@@ -3,13 +3,23 @@ import ReactDOM from 'react-dom/client';
 import React from 'react';
 import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
+import {Helmet} from "react-helmet";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+
+  
   
   <Router>
     <React.StrictMode>
-      <title>My Portfolio | About</title>
+    <Helmet
+        title="Joshua Garst's Portfolio"
+        link={[
+              {"rel": "icon", 
+               "href": "%PUBLIC_URL%/favicon.ico"
+              }
+             ]}
+/>
       <App id="app"/>
     </React.StrictMode>
   </Router>

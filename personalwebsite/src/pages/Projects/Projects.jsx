@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import ProjectItem from "../../components/Projectlistitem/ProjectItem";
 import "./Projects.css";
 import { Helmet } from "react-helmet";
-import p1Image from "../../assets/167258422-266730b5-c193-424a-9f5f-894dc745d465.png";
-import p2Image from "../../assets/datenightorganizer.png";
-import p3Image from "../../assets/movieApp.png";
+import p1Image from "./cyberdefense.png";
+import p2Image from "./datenightorganizer.png";
+import p3Image from "./movieApp.png";
 
 const Projects = () => {
   const [projectList, setProjectList] = useState([

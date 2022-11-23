@@ -6,13 +6,13 @@ h1{
 
 }
 nav{
-    margin-top: 2%;
+    margin-top: 3vh;
     display: flex;
     flex-wrap: nowrap;
-    justify-content:space-between;
+    justify-content:space-around;
     align-items: center;
     width: auto;
-    background-color: rgba(26, 26, 26, 0.5);
+    background-color: rgba(26, 26, 26, 0.3);
 }
 #li{
     text-decoration: none;
@@ -21,5 +21,8 @@ nav{
     display:block;
     width: fit-content;
     margin: 0%;
-    font-size: 3vw;
+    font-size: clamp(3.5vw, 4%, 5vh);
+}
+.home-button{
+    height: 10vw;
 }

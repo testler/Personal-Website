@@ -1,18 +1,25 @@
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 import './App.css';
 import { BrowserRouter as Router, Outlet, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import NavBar from './components/NavBar/NavBar';
 import Resume from './pages/Resume/Resume';
 import Projects from './pages/Projects/Projects';
-import Skills from './pages/Skills/Skills';
 import About from './pages/About/About';
 import Contactme from './pages/ContactMe/Contactme';
 
 function App() {
     return (
     <div>
-      <title>My Portfolio | About</title>
+      <Helmet
+        title="Joshua Garst's Portfolio"
+        link={[
+              {"rel": "icon", 
+               "href": "%PUBLIC_URL%/favicon.ico"
+              }
+             ]}
+/>
       <NavBar className="navbar"></NavBar>
       <Outlet></Outlet>
         <Routes>
@@ -20,7 +27,6 @@ function App() {
             <Route path="about" element={<About />} />
             <Route path="projects" element={<Projects />} />
             <Route path="resume" element={<Resume />} />
-            {/* <Route path="skills" element={<Skills />} /> */}
             <Route path="contactMe" element={<Contactme />} />
           <Route path="*" element={<Home />} />
           <Route path="**" element={<Home />} />
