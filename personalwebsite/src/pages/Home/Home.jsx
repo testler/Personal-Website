@@ -1,7 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import "./Home.css";
-import img from "../../assets/closeUp.jpg";
+import img from "../../assets/closeUp-transformed.png";
+import reactImg from "../../assets/react.png";
+import angularImg from "../../assets/angular-logo.png.webp";
+import basicImg from "../../assets/basic-frontend.png";
+import springImg from "../../assets/springBoot.png";
+import nodeImg from "../../assets/nodejs.svg"
+import pydjImg from "../../assets/python-django.png"
 
 const Home = () => {
   return (
@@ -10,11 +16,70 @@ const Home = () => {
         <title>Joshua Garst's Portfolio</title>
       </Helmet>
       <title>Joshua Garst's Portfolio</title>
-      <img className="home-img" src={img} alt="me" loading="lazy"/>
-      <h1 className="home-text">Joshua Garst</h1>
-      <h2 className="home-text">Full-stack Software Engineer</h2>
+      <section className="img-block">
+        <img
+          className="home-img"
+          src={img}
+          alt="A phot of Joshua Garst"
+          loading="lazy"
+        />
+      </section>
+      <section className="text-block">
+        <h1 className="home-text">Joshua Garst</h1>
+        <h2 className="home-text subtext">Full-stack Software Engineer</h2>
+        <hr/>
+        <br />
+        <h3 className="description">I am very adaptable, but these are my primary tech stacks</h3>
+        <br />
+        <div className="lists">
+          <ul className="backend">Back-Ends:
+            <li className="stackImg"><img
+            className="stackImg"
+            src={springImg}
+            alt="Java Spring Boot"
+            loading="lazy"
+          /></li>
+          <hr />
+            <li className="stackImg"><img
+            className="stackImg"
+            src={nodeImg}
+            alt="node.js"
+            loading="lazy"
+          /></li>
+          <hr />
+            <li className="stackImg"><img
+            className="stackImg"
+            src={pydjImg}
+            alt="Python Django"
+            loading="lazy"
+          /></li>
+          </ul>
+          <ul className="frontend">Front-Ends:
+            <li><img
+            className="stackImg"
+            src={reactImg}
+            alt="react.js"
+            loading="lazy"
+          /></li>
+          <hr />
+            <li><img
+            className="stackImg"
+            src={angularImg}
+            alt="Angular"
+            loading="lazy"
+          /></li>
+          <hr />
+            <li><img
+            className="stackImg"
+            src={basicImg}
+            alt="HTML5, CSS3 AND JavaScript"
+            loading="lazy"
+          /></li>
+          </ul>
+        </div>
+      </section>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

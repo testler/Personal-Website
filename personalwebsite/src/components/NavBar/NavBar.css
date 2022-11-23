@@ -6,19 +6,20 @@ h1{
 
 }
 nav{
+    margin-top: 2%;
     display: flex;
     flex-wrap: nowrap;
     justify-content:space-between;
     align-items: center;
-    background-color: #1a1a1a;
     width: auto;
+    background-color: rgba(26, 26, 26, 0.5);
 }
 #li{
     text-decoration: none;
     height:fit-content;
-    color: azure;
+    color: aliceblue;
     display:block;
     width: fit-content;
     margin: 0%;
-    font-size: 3.5vw;
+    font-size: 3vw;
 }

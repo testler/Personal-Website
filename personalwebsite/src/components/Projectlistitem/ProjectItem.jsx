@@ -8,8 +8,8 @@ const ProjectItem = ({url, projectName, image, description, DeploymentUrl}) => {
         <img href={DeploymentUrl} className="pi-img" src={image} alt={projectName} />
         
         <a   className="pi-p1" href={url}>
-            <h5>{description}</h5>
-            <span className="git-link">The code for the project on github</span>
+            <h5>{description}<span className="git-link">  The code for the project on github</span></h5>
+            
         </a>
     </section>
   )

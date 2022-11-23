@@ -2,9 +2,9 @@ HTML{
   background-image: url("./assets/Nebula\ Aqua-Pink.png");
   background-repeat: repeat;
   background-size: cover;
-  margin: 0;
-  padding: 0;
-  width:100vw;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  width: auto;
   height: 100%;
 }
 body {

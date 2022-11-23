@@ -1,18 +1,75 @@
 .home-div{
     text-align: center;
-    width: 100vw;
-    height: auto;
+}
+.text-block{
+    display: block;
+    width: 50%;
+    float: right;
+    display: flex;
+    flex-direction: column;
+}
+.img-block{
+    display:block;
+    width: 50%;
+    float: left;
 }
 .home-text{
-    width: 100%;
     text-align: center;
     color: aliceblue;
+    align-self: flex-start;
+    font-size: 5vw;
+    font-size: clamp(3vw, 5vw, 3vh);
 }
 .home-img{
-    background-image: url("../../assets/closeUp.jpg");
-    background-size:contain;
+    height: auto;
+    width: 60%;
+    border-radius: 20px;
+    margin-left: 25%;
+}
+h2.subtext{
+    font-size: 2.5vw;
+    font-size: clamp(2vw, 3vw, 2vh);
+}
+h3.description{
+    color: aliceblue;
+    font-size: 2.5vw;
+    font-size: clamp(1vw, 2vw, 1.5vh);
+    align-self: flex-start;
+}
+ul{
+    margin: 1vh;
+    text-align: left;
+    align-self: flex-start;
+    color: aliceblue;
+    font-size: 2.5vw;
+    font-size: clamp(1.75vw, 2.5vw, 2vh);
+    font-weight: 500;
     display: block;
-    margin: 0 auto 0 auto;
-    width: 50vw;
-    height: 50vw;
+}
+ul.frontend{
+    float: right;
+    display: block;
+    width: 50%;
+    margin: 0 0;
+}
+ul.backend{
+    float: left;
+    display: block;
+    width: 50%;
+    margin: 0 0;
+}
+ul > li{
+    font-weight:lighter;
+    text-align: left;
+    color: aliceblue;
+    font-size: 2.5vw;
+    font-size: clamp(1.5vw, 2vw, 1vh);
+}
+img.stackImg{
+    margin: 3%;
+    width: 50%;
+    height: auto;
+}
+hr{
+    width: 75%;
 }

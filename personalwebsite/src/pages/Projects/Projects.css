@@ -1,7 +1,40 @@
+h1{
+    font-size: 5vw;
+    font-size: clamp(4vh, 500%, 5vw);
+    text-align: center;
+    color: aliceblue;
+}
+h2{
+    color: rgba(255, 255, 255, .75);
+}
+.project-hr{
+    width: 100%;
+}
 section{
-    background: black;
+    margin: 5% auto;
+    width: 75vw;
+    text-align: center;
+}
+section img {
+    margin: 0 auto;
+    width: 75%;
+    text-align: center;
+    border-radius: 25px;
+}
+a{
+    text-decoration: none;
 }
 h5{
-    color: white;
-    
+    color: aliceblue;
+    width: 90%;
+    text-align: center;
+    font-size: 200%;
+    margin-right: auto;
+    margin-left: auto;
+}
+h3{
+    font-size: 400%;
+}
+span{
+    box-shadow: 20px;
 }

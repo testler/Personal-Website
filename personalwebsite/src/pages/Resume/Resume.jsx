@@ -5,16 +5,21 @@ import pdf from "../../assets/Joshua Garst Resume 1.pdf"
 import "./Resume.css";
 
 const Resume = () => {
-  function downloadFile(){
-    window.location = resume;
-  };
   return (
     <div className="resume-div" >
       <Helmet>
       <title>Joshua Garst's Portfolio | Resume</title>
       </Helmet>
-      <h1>The download will start automatically...<br/> if not <a onload={downloadFile()} href={resume}>click here</a></h1>
+      <h1>Below is a preview of my resume</h1>
+      <br />
+      <button><a href={resume}>Click Here to download a .docx of my resume</a></button>
+      <br />
+      <br />
+      <button><a href={pdf}>Click Here to download a .pdf of my resume</a></button>
+      <br />
+      <br />
       <iframe id="preview" src={pdf}/>
+      
     </div>
   )
 }

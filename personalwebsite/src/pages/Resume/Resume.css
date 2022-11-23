@@ -1,12 +1,25 @@
 .resume-div{
     color: aliceblue;
-    
+    text-align: center;
 }
-.resume-div > h1 > a{
-    text-decoration: none;
-    color: cyan;
+.resume-div > button > a{
+    font-size: clamp(1.5vh, 250%, 3vw);
+    color: black;
+}
+.resume-div > button{
+    border-radius: 10px;
+    padding: 1%;
+}
+.resume-div > h1{
+    font-size: 5vw;
+    font-size: clamp(2.5vh, 500%, 5vw);
+    text-align: center;
+    margin: 2vh 0;
 }
 #preview{
-    width: 98vw;
-    height: 85vh;
+    display: block;
+    float: none;
+    margin: 0 auto;
+    width: 85vw;
+    height: 110vw;
 }

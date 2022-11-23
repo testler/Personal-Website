@@ -1,27 +1,7 @@
-.pi-img{
-    width: 40vw;
-    height: auto;
-    display: block;
-}
-.pi-p1{
-    width: 60vw;
-    height: fit-content;
-    display: block;
-    font-size: 3vw;
-    text-decoration: none;
-}
 .git-link{
     color: aqua;
 }
 .pi-title{
     color:aliceblue;
-    display: block;
-    width: 100vw;
-    text-align: center;
-    font-size: 5vw;
-}
-.pi-item{
-    display: flex;
-    align-content: flex-start;
-    flex-wrap: wrap;
+   
 }

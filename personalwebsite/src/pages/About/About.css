@@ -1,9 +1,18 @@
 .about-div{
-    width: 80vw;
-    margin: 0 auto 0 auto;
-    font-size: 3vw;
+    width: 80%;
     height: auto;
+    margin: 5% auto;
     text-align: center;
     color:antiquewhite;
     text-align: justify;
+}
+.about-div > p{
+    font-size: 3vw;
+    font-size: clamp(2vh, 300%, 3vw);
+    text-align: left;
+}
+.about-div > h3{
+    font-size: 5vw;
+    font-size: clamp(4vh, 500%, 5vw);
+    text-align: center;
 }
