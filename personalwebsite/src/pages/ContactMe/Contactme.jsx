@@ -4,11 +4,11 @@ import { Helmet } from "react-helmet";
 
 const Contactme = () => {
   return (
-    <div className="contact">
+    <div className="contact" id="outlet">
       <Helmet>
         <title>My Portfolio | Contact Me</title>
       </Helmet>
-      <h2>For any business inquiries I can be reached at the following:</h2>
+      <h2>For any business inquiries I can be reached at:</h2>
       <ul>
         <li>Phone#: + 1 (940) 783 - 0938</li>
         <li>E-mail: joshuagarst@gmail.com</li>

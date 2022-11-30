@@ -56,3 +56,8 @@ ul > h5{
 .about-div>.right-about>ul>li {
     font-size: clamp(7%,7vw, 10vh);
 }
+@media only screen and (max-width: 768px) {
+    .about-icon{
+        border-radius: 0;
+    }
+}

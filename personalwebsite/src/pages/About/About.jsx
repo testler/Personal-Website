@@ -5,7 +5,7 @@ import index from "./Languages/index";
 
 const About = () => {
   return (
-    <div className="about-div">
+    <div className="about-div" id="outlet">
       <Helmet>
         <title>Joshua Garst's Portfolio | About</title>
       </Helmet>
@@ -25,7 +25,7 @@ const About = () => {
           {index.tools.map((tool) => {
             return (
               <li key={tool.name}>
-                <img src={tool.img} alt={tool.name} />
+                <img src={tool.img} alt={tool.name} className="about-icon"/>
                 <h6>{tool.name}</h6>
               </li>
             );
@@ -38,7 +38,7 @@ const About = () => {
           {index.langs.map((lang) => {
             return (
               <li key={lang.name}>
-                <img src={lang.img} alt={lang.name} />
+                <img src={lang.img} alt={lang.name} className="about-icon"/>
                 <h6>{lang.name}</h6>
               </li>
             );

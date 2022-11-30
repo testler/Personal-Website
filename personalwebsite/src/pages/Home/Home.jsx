@@ -11,14 +11,9 @@ import pydjImg from "./python-django.png"
 
 const Home = () => {
   return (
-    <div className="home-div">
+    <div className="home-div" id="outlet">
       <Helmet
         title="Joshua Garst's Portfolio"
-        link={[
-              {"rel": "icon", 
-               "href": "%PUBLIC_URL%/favicon.ico"
-              }
-             ]}
 />
       <title>Joshua Garst's Portfolio</title>
       <section className="img-block">
@@ -33,9 +28,7 @@ const Home = () => {
         <h1 className="home-text">Joshua Garst</h1>
         <h2 className="home-text subtext">Full-stack Software Engineer</h2>
         <hr />
-        <br />
         <h3 className="description">I am very adaptable, but these are my primary tech stacks</h3>
-        <br />
         <div className="lists">
           <ul className="backend">Back-Ends:
             <li className="stackImg"><img

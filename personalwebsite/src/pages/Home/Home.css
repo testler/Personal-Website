@@ -2,14 +2,15 @@
     text-align: center;
 }
 .text-block{
-    width: 50%;
+    width: 55%;
     float: right;
     display: flex;
     flex-direction: column;
+    margin-right: 10%;
 }
 .img-block{
     display:block;
-    width: 50%;
+    width: 30%;
     float: left;
 }
 .home-text{
@@ -21,20 +22,23 @@
 }
 .home-img{
     height: auto;
-    width: 60%;
+    width: 80%;
     border-radius: 20px;
-    margin-left: 25%;
+    margin-left: 15%;
 }
 h2.subtext{
     font-size: 2.5vw;
     font-size: clamp(2vw, 3vw, 2vh);
+    font-weight: 500;
 }
 h3.description{
     color: aliceblue;
     font-size: 2.5vw;
-    font-size: clamp(1vw, 2vw, 1.5vh);
+    font-size: clamp(2vw, 2.5vw, 1.5vh);
     align-self: flex-start;
     height: fit-content;
+    margin: 3% 0;
+    font-weight: 550;
 }
 ul{
     margin: 1vh;
@@ -42,7 +46,7 @@ ul{
     align-self: flex-start;
     color: aliceblue;
     font-size: 2.5vw;
-    font-size: clamp(1.75vw, 2.5vw, 2vh);
+    font-size: clamp(2.5vw, 3vw, 100%);
     font-weight: 500;
     display: block;
 }
@@ -67,9 +71,46 @@ ul > li{
 }
 img.stackImg{
     margin: 3%;
-    width: 50%;
+    width: 70%;
     height: auto;
 }
 hr{
-    width: 75%;
+    width: 85%;
+    align-self: left;
+}
+
+
+
+@media only screen and (max-width: 800px) {
+    h3.description{
+        height: min-content;
+        font-size: 3vw;
+        font-weight: 300;
+        color: white;
+        margin: 5% 0;
+    }
+    .home-img{
+        border-radius: 10px;
+        width: 90%;
+        margin: 0;
+    }
+    .text-block{
+        float: right;
+        width: 55%;
+        margin: 5vh 0;
+    }
+    .img-block{
+        width: 45%;
+        margin: 5vh auto;
+    }
+    img.stackImg{
+        margin: 5%;
+        width: 85%;
+        height: auto;
+        border-radius: 0;
+    }
+    ul{
+        font-size: 100%;
+        font-weight: 400;
+    }
 }

@@ -35,14 +35,14 @@ const Projects = () => {
     {
       projectName: "All Things By AV",
       url: "https://github.com/testler/AllyvegaStoreFrontend",
-      deploymentUrl: "",
+      deploymentUrl: "https://github.com/testler/AllyvegaStoreFrontend",
       image: "",
       description:
         "This is an e-commerce website created for my sister's business and was created with angular, Typescript, css and HTML for the frontend and Java, Spring boot, Spring data, postgreSQL for the backend and database.",
     },
   ]);
   return (
-    <section>
+    <section id="outlet">
       <Helmet>
         <title>Joshua Garst's Portfolio | Projects</title>
       </Helmet>
@@ -54,13 +54,13 @@ const Projects = () => {
             <ProjectItem
               key={project.projectName}
               url={project.url}
-              deploymentUrl={project.deploymentUrl}
+              DeploymentUrl={project.deploymentUrl}
               projectName={project.projectName}
               image={project.image}
               description={project.description}
             ></ProjectItem>
             <br/>
-            <hr className="project-hr"/ >
+            <hr className="project-hr"></hr >
             <br/>
           </span>
         );

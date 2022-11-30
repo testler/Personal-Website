@@ -16,7 +16,6 @@ function App() {
         title="Joshua Garst's Portfolio"
         link={[
               {"rel": "icon", 
-               "href": "%PUBLIC_URL%/favicon.ico"
               }
              ]}
 />
