@@ -1,16 +1,19 @@
+.about-div{
+    width: 95vw;
+}
 .about-div > div.main-about {
     width: 80%;
     height: auto;
     margin: 5% auto;
     text-align: center;
-    color: antiquewhite;
+    color: aliceblue;
     text-align: justify;
 }
 
 .about-div > div.main-about > p {
     font-size: 3vw;
     font-size: clamp(2vh, 300%, 3vw);
-    text-align: left;
+    text-align: justify;
 }
 
 .about-div > div.main-about > h3 {
@@ -20,6 +23,7 @@
 }
 ul > h5{
     font-size: clamp(1.2vh, 250%, 2.75vw);
+    color: aliceblue;
 }
 .about-div>.left-about {
     float: left;
@@ -55,6 +59,7 @@ ul > h5{
 .about-div>.left-about>ul>li,
 .about-div>.right-about>ul>li {
     font-size: clamp(7%,7vw, 10vh);
+    color: aliceblue;
 }
 @media only screen and (max-width: 768px) {
     .about-icon{

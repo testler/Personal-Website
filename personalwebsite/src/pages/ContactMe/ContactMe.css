@@ -15,4 +15,7 @@
 }
 .contact > ul > li{
     font-size: clamp(2vh, 250%, 2.5vw);
+    width: 60vw;
+    justify-content: center;
+    margin: 0 auto;
 }

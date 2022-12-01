@@ -10,7 +10,7 @@ const Contactme = () => {
       </Helmet>
       <h2>For any business inquiries I can be reached at:</h2>
       <ul>
-        <li>Phone#: + 1 (940) 783 - 0938</li>
+        <li>Phone#: +1(940)783-0938</li>
         <li>E-mail: joshuagarst@gmail.com</li>
       </ul>
     </div>
