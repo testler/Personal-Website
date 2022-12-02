@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed&display=swap');
+h1{
+  font-family: 'Bebas Neue', cursive;
+}
+h2, h3, h4, h6, h5, a ,p,li,ul{
+  font-family: 'Roboto Condensed', sans-serif;
+}
 HTML{
   background-image: url("./14.jpg");
   background-repeat:no-repeat;
