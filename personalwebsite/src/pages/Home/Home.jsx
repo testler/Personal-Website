@@ -25,7 +25,7 @@ const Home = () => {
         </section>
       </div>
 
-      <h3 className="description">Primary tech stacks</h3>
+      <h3 className="description">Primary Tech Stacks</h3>
       <div className="lists">
         <ul className="backend">
           <h4>Back-Ends:</h4>
