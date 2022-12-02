@@ -18,7 +18,7 @@ nav{
     justify-content:space-around;
     align-items: center;
     width: auto;
-    background-color: rgba(26, 26, 26, 0.3);
+    background-color: rgba(26, 26, 26, 0.7);
 }
 #li{
     text-decoration: none;
@@ -58,7 +58,7 @@ img#logo{
         width: 100vw;
         display: flex;
         flex-direction: row;
-        background-color: rgba(26, 26, 26, 0.6);
+        background-color: rgba(26, 26, 26, 0.8);
         justify-content: space-between;
         margin: 0;
     }

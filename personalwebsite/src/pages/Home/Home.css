@@ -40,6 +40,7 @@ h2.subtext{
 h3.description{
     color:aliceblue;
     font-size: 4vw;
+    margin-top: 3vh;
 }
 div.lists{
     display: flex;
