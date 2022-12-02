@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
 import homeImg from "./faciocon.png";
-import navBtn from "./hamburger.png"
+import navBtn from "./humburger.png"
 import logo from "./logo1.png"
   
 const NavBar = () => {

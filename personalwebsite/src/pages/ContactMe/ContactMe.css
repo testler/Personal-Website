@@ -19,3 +19,8 @@
     justify-content: center;
     margin: 0 auto;
 }
+img#about-logo{
+    display: block;
+    position: relative;
+    margin: 5vh auto;
+}
