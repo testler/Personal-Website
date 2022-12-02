@@ -28,8 +28,8 @@ section.name-caption-block{
 h1.home-text{
     color: aliceblue;
     align-self: center;
-    font-size: 5vw;
-    font-size: clamp(5vw, 7vw, 10vh);
+    font-size: 7vw;
+    font-size: clamp(7vw, 9vw, 11vh);
     padding: 5%;
 }
 h2.subtext{
