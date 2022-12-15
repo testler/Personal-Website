@@ -63,6 +63,18 @@ button.deploy-link{
     display: block;
     float: right;
 }
+button.WIP{
+    font-size: 2vw;
+    background-color: yellow;
+    color: black;
+    padding: 2%;
+    border-radius: 10px;
+    border-color: transparent;
+    margin: 3% auto;
+    text-align: center;
+    display: block;
+    float: right;
+}
 section.pi-item{
     margin: 3vw 0;
 }

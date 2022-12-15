@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet";
 import p1Image from "./cyberdefense.png";
 import p2Image from "./datenightorganizer.png";
 import p3Image from "./movieApp.png";
+import p4Image from "./AllThingsAV.jpg";
 
 const Projects = () => {
   const [projectList, setProjectList] = useState([
@@ -35,8 +36,8 @@ const Projects = () => {
     {
       projectName: "All Things By AV",
       url: "https://github.com/testler/AllyvegaStoreFrontend",
-      deploymentUrl: "https://github.com/testler/AllyvegaStoreFrontend",
-      image: "",
+      deploymentUrl: "WIP",
+      image: p4Image,
       description:
         "This is an e-commerce website created for my sister's business and was created with angular, Typescript, css and HTML for the frontend and Java, Spring boot, Spring data, postgreSQL for the backend and database.",
     },
