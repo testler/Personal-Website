@@ -1,0 +1,26 @@
+.contact{
+    color: aliceblue;
+}
+.contact > h2{
+    font-size: 5vw;
+    font-size: clamp(2vh, 400%, 4vw);
+    text-align: center;
+    margin: 5% auto;
+}
+.contact > ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.contact > ul > li{
+    font-size: clamp(2vh, 250%, 2.5vw);
+    width: 60vw;
+    justify-content: center;
+    margin: 0 auto;
+}
+img#about-logo{
+    display: block;
+    position: relative;
+    margin: 5vh auto;
+}

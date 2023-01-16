@@ -1,0 +1,44 @@
+.resume-div{
+    color: aliceblue;
+    text-align: center;
+}
+.resume-div > button > a{
+    font-size: clamp(1.5vh, 250%, 3vw);
+    color: black;
+}
+.resume-div > button{
+    border-radius: 10px;
+    padding: 1%;
+}
+.resume-div > h1{
+    font-size: 5vw;
+    font-size: clamp(2.5vh, 500%, 5vw);
+    text-align: center;
+    margin: 2vh 0;
+}
+#preview{
+    display: block;
+    float: none;
+    margin: 0 auto;
+    width: 85vw;
+    height: 110vw;
+}
+button.resume-button > a{
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 2.5vw;
+}
+button.resume-button{
+    padding: 2.5%;
+    border-radius: 10vw;
+    background-color: slategrey;
+    border-color: transparent;
+}
+@media only screen and (max-width: 800px) {
+    button.resume-button > a{
+        font-size: 4vw;
+    }
+    button.resume-button{
+        max-width: 90vw;
+    }
+}

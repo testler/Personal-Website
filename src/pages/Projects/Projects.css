@@ -1,0 +1,111 @@
+h1{
+    font-size: 5vw;
+    font-size: clamp(4vh, 500%, 5vw);
+    text-align: center;
+    color: aliceblue;
+}
+h2{
+    color: rgba(255, 255, 255, .75);
+}
+h3.pi-title{
+    color: aliceblue;
+    font-weight: 500;
+}
+hr.project-hr{
+    width: 100%;
+}
+section{
+    margin: 5% auto;
+    width: 75vw;
+    text-align: center;
+}
+section img {
+    margin: 0 auto;
+    width: 75%;
+    text-align: center;
+    border-radius: 25px;
+}
+a.pi-link{
+    text-decoration: none;
+    margin: 0 0;
+}
+h5.pi-description{
+    color: aliceblue;
+    width: 90%;
+    text-align: center;
+    font-size: 200%;
+    margin: 1% auto 0 auto;
+    font-weight: 300;
+}
+h3{
+    font-size: 400%;
+}
+button.git-link{
+    font-size: 2vw;
+    background-color: slategray;
+    color: aliceblue;
+    padding: 2%;
+    border-radius: 50px;
+    border-color: transparent;
+    margin: 3% auto;
+    display: block;
+    float: left;
+}
+button.deploy-link{
+    font-size: 2vw;
+    background-color: slategray;
+    color: aliceblue;
+    padding: 2%;
+    border-radius: 50px;
+    border-color: transparent;
+    margin: 3% auto;
+    text-align: center;
+    display: block;
+    float: right;
+}
+button.WIP{
+    font-size: 2vw;
+    background-color: yellow;
+    color: black;
+    padding: 2%;
+    border-radius: 10px;
+    border-color: transparent;
+    margin: 3% auto;
+    text-align: center;
+    display: block;
+    float: right;
+}
+section.pi-item{
+    margin: 3vw 0;
+}
+@media only screen and (max-width: 768px) {
+    h3.pi-title{
+        color: aliceblue;
+        font-weight: 400;
+    }
+    h5.pi-description{
+        font-size: 4.5vw;
+        text-align: left;
+        width: 95%;
+    }
+    section{
+        width: 100vw;
+    }
+    .pi-title{
+        font-size: 7vw;
+    }
+    button.deploy-link{
+        font-size: 5vw;
+        float: none;
+        margin: 4vw auto;
+    }
+    button.git-link{
+        font-size: 5vw;
+        float: none;
+        margin: 4vw auto;
+    }
+    hr.project-hr{
+        width: 85%;
+        margin: 0 auto;
+    }
+}

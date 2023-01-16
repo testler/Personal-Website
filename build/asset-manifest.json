@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a1f00a80.css",
+    "main.js": "/static/js/main.69b31d1c.js",
+    "static/media/closeUp-transformed.png": "/static/media/closeUp-transformed.504dcb552e92bbf61257.png",
+    "static/media/python-django.png": "/static/media/python-django.0a35c161845abc862651.png",
+    "static/media/basic-frontend.png": "/static/media/basic-frontend.680785d6f1201f2227e8.png",
+    "static/media/14.jpg": "/static/media/14.cf347b20bfd58d920af3.jpg",
+    "static/media/react.png": "/static/media/react.f3136590542f1cae07f0.png",
+    "static/media/springBoot.png": "/static/media/springBoot.4bd74334de29adb2cdbb.png",
+    "static/media/datenightorganizer.png": "/static/media/datenightorganizer.fdfb72143543437724f0.png",
+    "static/media/cyberdefense.png": "/static/media/cyberdefense.522098cd1a066b605670.png",
+    "static/media/mongoose5.png": "/static/media/mongoose5.21c8e3197bfe115b85ab.png",
+    "static/media/angular-logo.png": "/static/media/angular-logo.70d5820762e0d6f74201.png",
+    "static/media/movieApp.png": "/static/media/movieApp.b2850fa4b0b0e1254f99.png",
+    "static/media/AllThingsAV.jpg": "/static/media/AllThingsAV.74c40500e6cf314fb199.jpg",
+    "static/media/Joshua Garst Resume.pdf": "/static/media/Joshua Garst Resume.f8ac1999d57ec4eaf605.pdf",
+    "static/media/css3.png": "/static/media/css3.5e89f81e49e000d1f3b4.png",
+    "static/media/logo1.png": "/static/media/logo1.a256613aef6f6dbd3a41.png",
+    "static/media/SQL.jpg": "/static/media/SQL.185230cab255360a20e7.jpg",
+    "static/media/linux.png": "/static/media/linux.c5ea348605f7d9eefff5.png",
+    "static/media/png-transparent-postgresql-database-logo-computer-icons-replication-software-developer-miscellaneous-blue-mammal.png": "/static/media/png-transparent-postgresql-database-logo-computer-icons-replication-software-developer-miscellaneous-blue-mammal.2e6f8769245d5066167a.png",
+    "static/media/springboot.png": "/static/media/springboot.94f201ce44348763e6a5.png",
+    "static/media/java.png": "/static/media/java.66d5a4fef00821dfe115.png",
+    "static/media/faciocon.png": "/static/media/faciocon.fa7ee44424df0fb15684.png",
+    "static/media/python.png": "/static/media/python.82ab0bdb7e21c02fbe36.png",
+    "static/media/html5.png": "/static/media/html5.2c6a71b184b518b01b9a.png",
+    "static/media/ext-553.png": "/static/media/ext-553.3fd4ac4e5c81365ab878.png",
+    "static/media/nodejs.png": "/static/media/nodejs.a4713ff2ca054bf23788.png",
+    "static/media/typescript.png": "/static/media/typescript.af108db04a54d784da9b.png",
+    "static/media/download.png": "/static/media/download.bcabedc647a444124d43.png",
+    "static/media/humburger.png": "/static/media/humburger.de65e5167f9716a6c022.png",
+    "static/media/Joshua Garst Resume.docx": "/static/media/Joshua Garst Resume.a89880d43b192b1f67e9.docx",
+    "static/media/nodejs.svg": "/static/media/nodejs.6e615d3ef0b5afa070caa165450af385.svg",
+    "index.html": "/index.html",
+    "main.a1f00a80.css.map": "/static/css/main.a1f00a80.css.map",
+    "main.69b31d1c.js.map": "/static/js/main.69b31d1c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a1f00a80.css",
+    "static/js/main.69b31d1c.js"
+  ]
+}
