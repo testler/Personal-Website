@@ -1,77 +1,101 @@
-.home-div{
+:root {
+    --text-color: aliceblue;
+}
+.home-div {
     text-align: center;
-    width: 95vw;
-    margin: 0;
-    padding: 0;
+    width: 100%;
 }
-div#top-div{
+
+div#top-div {
     display: flex;
-    margin: 0;
+    flex-wrap: wrap;
 }
-section.img-block{
-    display:block;
-    width: 30%;
-    float: left;
+
+section.img-block {
+    width: 50%;
+    text-align: center;
+    padding: 2%;
+    box-sizing: border-box;
+    display: inline-block;
 }
-img.home-img{
+
+img.home-img {
     height: auto;
     width: 80%;
     border-radius: 20px;
-    margin-left: 15%;
+    margin: auto;
 }
-section.name-caption-block{
-    width: 55%;
-    float: right;
+
+section.name-caption-block {
+    width: 50%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 2%;
+    box-sizing: border-box;
+    display: inline-block;
 }
-h1.home-text{
-    color: aliceblue;
-    align-self: center;
+
+h1.home-text {
+    color: var(--text-color);
     font-size: 7vw;
-    font-size: clamp(7vw, 9vw, 11vh);
     padding: 5%;
 }
-h2.subtext{
+
+h2.subtext {
     font-size: 2.5vw;
-    font-size: clamp(2vw, 3vw, 2vh);
     font-weight: 500;
+    text-align: center;
 }
-h3.description{
-    color:aliceblue;
+
+h3.description {
+    color: var(--text-color);
     font-size: 4vw;
-    margin-top: 3vh;
+    margin: 3vh 0;
+    text-align: center;
 }
-div.lists{
+
+div.lists {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
 }
-ul{
-    width:40vw;
+
+ul {
+    width: 40vw;
     padding: 5%;
+    box-sizing: border-box;
 }
-ul > h4{
+
+ul > h4 {
     color: aliceblue;
     font-size: 4vw;
+    text-align: center;
 }
-img.stackImg{
+
+img.stackImg {
     max-width: 75%;
     max-height: 30vh;
     padding: 5%;
 }
-hr{
+
+hr {
     width: 90%;
     align-self: center;
+    margin: 2% auto;
 }
-@media only screen and (max-width: 800px) {
-    section.name-caption-block{
-        float: right;
-        width: 55%;
-        margin: 5vh 0 0 0;
-    }
-    section.img-block{
-        width: 45%;
-        margin: 5vh 0 auto 0;
-    }
 
+@media only screen and (max-width: 800px) {
+    section.name-caption-block, section.img-block {
+        width: 100%;
+    }
+    h1.home-text, h2.subtext, h3.description, ul > h4 {
+        font-size: 3vw;
+    }
+    h1.home-text {
+        font-size: 15vw;
+    }
+    h2.subtext {
+        font-size: 5vw;
+    }
 }
