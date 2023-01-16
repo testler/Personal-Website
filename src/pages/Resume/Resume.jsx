@@ -10,7 +10,7 @@ const Resume = () => {
       <Helmet>
       <title>Joshua Garst's Portfolio | Resume</title>
       </Helmet>
-      <h1>Below is a preview of my resume</h1>
+      <h1 className='page-title'>Below is a preview of my resume</h1>
       <br />
       <button className='resume-button'><a href={resume}>Click Here to download a .docx of my resume</a></button>
       <br />
@@ -19,7 +19,6 @@ const Resume = () => {
       <br />
       <br />
       <iframe id="preview" src={pdf}/>
-      
     </div>
   )
 }

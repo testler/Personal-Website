@@ -16,11 +16,11 @@ const Home = () => {
       <title>Joshua Garst's Portfolio</title>
       <div id="top-div">
         <section className="img-block">
-          <img className="home-img" src={img} alt="A phot of Joshua Garst" loading="lazy" />
+          <img className="home-img" src={img} alt="A photo of Joshua Garst" loading="lazy" />
         </section>
         <section className="name-caption-block">
           <h1 className="home-text">Joshua Garst</h1>
-          <h2 className="subtext">Full-stack Software Engineer</h2>
+          <h2 className="subtext page-title">Full-stack Software Engineer</h2>
           <hr />
         </section>
       </div>

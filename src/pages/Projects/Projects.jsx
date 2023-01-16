@@ -47,8 +47,8 @@ const Projects = () => {
       <Helmet>
         <title>Joshua Garst's Portfolio | Projects</title>
       </Helmet>
-      <h1>Web Applications</h1>
-      <h2>Developed by Joshua Garst</h2>
+      <h1 className="page-title">Web Applications</h1>
+      <h2 className="page-title">Developed by Joshua Garst</h2>
       {projectList.map((project) => {
         return (
           <span>

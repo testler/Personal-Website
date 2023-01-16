@@ -1,11 +1,14 @@
-h1{
+
+h1.page-title{
     font-size: 5vw;
     font-size: clamp(4vh, 500%, 5vw);
     text-align: center;
-    color: aliceblue;
+    color: rgb(31, 31, 31);
+    background: linear-gradient(90deg,transparent, rgba(255, 255, 255, 0.75), transparent);
 }
-h2{
-    color: rgba(255, 255, 255, .75);
+h2.page-title{
+    color: black;
+    background: linear-gradient(90deg,transparent, rgba(255, 255, 255, 0.75), transparent);
 }
 h3.pi-title{
     color: aliceblue;
