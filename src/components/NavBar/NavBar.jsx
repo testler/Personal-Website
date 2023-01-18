@@ -46,7 +46,7 @@ const NavBar = () => {
             Resume
           </Link>
           <Link onClick={isMobileDevice ? toggleNav : null} to="/contactMe">
-            Contact Me
+            Contact
           </Link>
         </div>
       </nav>

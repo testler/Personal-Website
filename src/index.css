@@ -1,9 +1,47 @@
+@font-face {
+  font-family: "Mars";
+  src: url(../fonts/Mars.otf);
+}
+@font-face {
+  font-family: "BerlinFraktur";
+  src: url(../fonts/BerlinFraktur-24.otf);
+}
+@font-face {
+  font-family: "Kusanagi";
+  src: url(../fonts/Kusanagi.otf);
+}
+@font-face {
+  font-family: "NEOSTEEL";
+  src: url(../fonts/NEOSTEEL.otf);
+}
+@font-face {
+  font-family: "ONEDAY";
+  src: url(../fonts/ONEDAY.otf);
+}
+@font-face {
+  font-family: "retrophile-regular";
+  src: url(../fonts/retrophile-regular.otf);
+}
+:root{
+  --font1: "Mars",'Bebas Neue', cursive;
+  --font2: 'Bebas Neue', cursive;
+  --font3: 'Roboto Condensed', sans-serif;
+  --font4: "BerlinFraktur", cursive;
+  --font5: "Kusanagi",'Roboto Condensed', sans-serif, cursive;
+  --font6: "NEOSTEEL", cursive;
+  --font7: "ONEDAY", cursive;
+  --font8: "retrophile-regular", cursive;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed&display=swap');
+*{
+  overflow-x: hidden;
+}
 h1{
-  font-family: 'Bebas Neue', cursive;
+  font-family: var(--font1)
 }
 h2, h3, h4, h6, h5, a ,p,li,ul{
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: var(--font6)
 }
 HTML{
   background: url('./14.jpg') no-repeat center center / cover;;
@@ -13,5 +51,10 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+}
+.page-title{
+  font-family: var(--font5);
+  color: black;
+  background: linear-gradient(90deg,transparent, rgba(255, 255, 255, 0.75), transparent);
 }
 

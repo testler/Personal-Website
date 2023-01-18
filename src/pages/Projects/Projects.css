@@ -1,14 +1,9 @@
 
-h1.page-title{
+h1{
     font-size: 5vw;
     font-size: clamp(4vh, 500%, 5vw);
     text-align: center;
-    color: rgb(31, 31, 31);
-    background: linear-gradient(90deg,transparent, rgba(255, 255, 255, 0.75), transparent);
-}
-h2.page-title{
-    color: black;
-    background: linear-gradient(90deg,transparent, rgba(255, 255, 255, 0.75), transparent);
+    margin-top: 0;
 }
 h3.pi-title{
     color: aliceblue;
@@ -27,6 +22,9 @@ section img {
     width: 75%;
     text-align: center;
     border-radius: 25px;
+}
+h3.pi-title{
+    background: linear-gradient(90deg,transparent, rgba(0, 0, 0, 0.75), transparent);
 }
 a.pi-link{
     text-decoration: none;

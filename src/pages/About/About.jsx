@@ -10,7 +10,7 @@ const About = () => {
         <title>Joshua Garst's Portfolio | About</title>
       </Helmet>
       <div className="main-about">
-        <h3>About</h3>
+        <h3 className="page-title">About</h3>
         <p>
           Software engineer with a background in fulfillment logistics,
           management, and e-commerce. Education in full-stack end-to-end

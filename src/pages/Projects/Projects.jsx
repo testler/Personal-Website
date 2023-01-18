@@ -15,15 +15,15 @@ const Projects = () => {
       deploymentUrl: "https://testler.github.io/CyberDefense/",
       image: p1Image,
       description:
-        "Cyber Defense is a purely HTML5, CSS3 and Javascript deployed educational game.  It was my first major project using heavy javascript.  The goal was to create a game that educates people on cybersecurity.  I achieved creating a game, but I am still working on implementing the more educational aspects.",
-    },
+        "Cyber Defense is an interactive educational game, teaching basic cyber security concepts. Used HTML, CSS, Git, and JavaScript in development. Optimized for different devices and browsers for user-friendly experience."
+          },
     {
       projectName: "Date Night Organizer",
       url: "https://github.com/testler/DateNightOrganizer",
       deploymentUrl: "https://datenightorganizer.herokuapp.com/",
       image: p2Image,
       description:
-        "A web app created and deployed using Node.js, mongoose, MongoDB, and express.js.  This app helps you create, organize, and randomly pick date night ideas for you and your significant other.  The idea is to simplify thinking of things to do so that you can spend more time doing them.  Many indecisive people are out there, and this site is for them or their significant other.",
+      "Date Night Organizer is a service-oriented web app to inspire couples. Used Express.js, Node.js, and EJS for server-side rendering, MongoDB, Mongoose, and EJS for database management. Utilized Git, GitHub, and Agile methodologies for efficient and effective management of the project. Aimed to provide personalized, tailored date ideas for users using responsive design for optimal user experience across devices.",
     },
     {
       projectName: "The Movie App",
@@ -31,16 +31,15 @@ const Projects = () => {
       deploymentUrl: "https://runtimeterror1.herokuapp.com/",
       image: p3Image,
       description:
-        " This is a full-stack application using React.js, Javascript, Token auth, CSS and HTML for the front end and MongoDB, mongoose, Node.js, Express.js, JavaScript and integrating the IMDB API for the back end.  An app that help you find movies you want to watch, and create a watchlist of them all",
-    },
+        "The Movie App, was developed with team of 4 engineers. Utilized React.js, Node.js, IMDB API, MongoDB for seamless and intuitive movie discovery. Developer used Agile, Git, GitHub, Trello, Slack for efficient and effective management, collaboration, and received positive feedback from users."
+          },
     {
       projectName: "All Things By AV",
       url: "https://github.com/testler/AllyvegaStoreFrontend",
       deploymentUrl: "WIP",
       image: p4Image,
       description:
-        "This is an e-commerce website created for my sister's business and was created with angular, Typescript, css and HTML for the frontend and Java, Spring boot, Spring data, postgreSQL for the backend and database.",
-    },
+        "All Things AV is an e-commerce storefront that uses Angular and Java Spring Boot. Implemented endpoints protection, used PostgreSQL for data storage. Utilized Angular for UI/UX, delivered project on time, budget, exceeded client expectations."    },
   ]);
   return (
     <section id="outlet">
@@ -60,9 +59,9 @@ const Projects = () => {
               image={project.image}
               description={project.description}
             ></ProjectItem>
-            <br/>
-            <hr className="project-hr"></hr >
-            <br/>
+            <br />
+            <hr className="project-hr"></hr>
+            <br />
           </span>
         );
       })}
