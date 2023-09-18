@@ -41,7 +41,6 @@ const Home = () => {
             className="home-img"
             src={img}
             alt="A photo of Joshua Garst"
-            loading="lazy"
             srcSet={srcset}
             sizes="(min-width: 780px) 56.26vw, 75vw"
           />
@@ -49,25 +48,19 @@ const Home = () => {
         </section>
         <section className="name-caption-block">
           <h1 className="home-text">Joshua Garst</h1>
-          <h2 className="subtext page-title">Full-stack Software Engineer</h2>
+          <h2 className="subtext">Full-stack Software Engineer</h2>
           <hr />
         </section>
       </div>
-      <h3 className="description">Primary Tech Stacks</h3>
-      <div className="lists">
-        <ul className="backend">
-          <h4>Back-Ends:</h4>
-          <img className="stackImg" src={cSharpImg} alt="C Sharp logo" loading="lazy" />
-          <img className="stackImg" src={nodeImg} alt="node.js logo" loading="lazy" />
-          <img className="stackImg" src={pydjImg} alt="Python Django logo" loading="lazy" />
-        </ul>
-        <ul className="frontend">
-          <h4>Front-Ends:</h4>
-          <img className="stackImg" src={reactImg} alt="react.js logo" loading="lazy" />
-          <img className="stackImg" src={wpImg} alt="Word Press logo" loading="lazy" />
-          <img className="stackImg" src={basicImg} alt="HTML5, CSS3 AND JavaScript logos" loading="lazy" />
-        </ul>
-      </div>
+      <h3 className="tech-title">Primary Technologies</h3>
+      <ul className="tech">
+        <img className="stackImg" src={cSharpImg} alt="C Sharp logo" />
+        <img className="stackImg long" src={nodeImg} alt="node.js logo" />
+        <img className="stackImg" src={pydjImg} alt="Python Django logo" />
+        <img className="stackImg" src={reactImg} alt="react.js logo" />
+        <img className="stackImg" src={wpImg} alt="Word Press logo" />
+        <img className="stackImg xlong" src={basicImg} alt="HTML5, CSS3 AND JavaScript logos" />
+      </ul>
     </div>
   );
 };
