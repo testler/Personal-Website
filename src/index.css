@@ -44,7 +44,7 @@ h2, h3, h4, h6, h5, a ,p,li,ul{
   font-family: var(--font6)
 }
 HTML{
-  background: url('./8-Bit_Forest.png') repeat;
+  background: url('./8-Bit_Forest.webp') repeat;
   background-color: rgb(23, 23, 23);
 }
 body {
