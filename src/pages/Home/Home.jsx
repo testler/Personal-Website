@@ -55,11 +55,11 @@ const Home = () => {
       <h3 className="tech-title">Primary Technologies</h3>
       <ul className="tech">
         <img className="stackImg" src={cSharpImg} alt="C Sharp logo" />
-        <img className="stackImg long" src={nodeImg} alt="node.js logo" />
+        <img className="stackImg" src={nodeImg} alt="node.js logo" />
         <img className="stackImg" src={pydjImg} alt="Python Django logo" />
         <img className="stackImg" src={reactImg} alt="react.js logo" />
         <img className="stackImg" src={wpImg} alt="Word Press logo" />
-        <img className="stackImg xlong" src={basicImg} alt="HTML5, CSS3 AND JavaScript logos" />
+        <img className="stackImg" src={basicImg} alt="HTML5, CSS3 AND JavaScript logos" />
       </ul>
     </div>
   );

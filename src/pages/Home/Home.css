@@ -10,15 +10,7 @@ h3.tech-title, h2.subtext, h1.home-text{
 }
 ul.tech img.stackImg{
     height: 15vw;
-    width: 15vw;
+    width: auto;
     padding: 10px;
     margin: 10px;
-}
-ul.tech img.stackImg.long{
-    height: 15vw;
-    width: 30vw;
-}
-ul.tech img.stackImg.xlong{
-    height: 15vw;
-    width: 35vw;
 }
