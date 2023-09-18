@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import navBtn from "./navBtn.png"
+import navButton from "./bars-solid.svg";
 import "./NavBar.css";
 
 const NavBar = () => {
@@ -27,8 +27,11 @@ const NavBar = () => {
       <nav className={`nav-menu ${isOpen || !isMobileDevice ? "active" : ""}`}>
         <div className={`nav-bar-bar ${isMobileDevice ? "mobile" : ""}`}>
           {isMobileDevice && (
-            <button onClick={toggleNav} className={`nav-button ${isOpen ? "" : "open"}`}>
-              <img src={navBtn} alt="nav button" />
+            <button
+              onClick={toggleNav}
+              className={`nav-button ${isOpen ? "" : "open"}`}
+            >
+              <img src={navButton} alt="navigation button" />
             </button>
           )}
         </div>

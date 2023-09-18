@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import "./Home.css";
-import img from "./closeUp-transformed.png";
-import reactImg from "./react.png";
-import angularImg from "./angular-logo.png";
-import basicImg from "./basic-frontend.png";
-import springImg from "./springBoot.png";
-import nodeImg from "./nodejs.svg";
-import pydjImg from "./python-django.png";
+import img from "./closeUp-transformed.avif";
+import reactImg from "./react.webp";
+import wpImg from "./WordPress.svg";
+import basicImg from "./basic-frontend.webp";
+import nodeImg from "./nodejs.webp";
+import pydjImg from "./python-django.avif";
+import cSharpImg from "./C.avif";
 
 const Home = () => {
   return (
@@ -24,25 +24,19 @@ const Home = () => {
           <hr />
         </section>
       </div>
-
       <h3 className="description">Primary Tech Stacks</h3>
       <div className="lists">
         <ul className="backend">
           <h4>Back-Ends:</h4>
-          <img className="stackImg" src={springImg} alt="Java Spring Boot" loading="lazy" />
-          <hr />
-          <img className="stackImg" src={nodeImg} alt="node.js" loading="lazy" />
-          <hr />
-          <img className="stackImg" src={pydjImg} alt="Python Django" loading="lazy" />
+          <img className="stackImg" src={cSharpImg} alt="C Sharp logo" loading="lazy" />
+          <img className="stackImg" src={nodeImg} alt="node.js logo" loading="lazy" />
+          <img className="stackImg" src={pydjImg} alt="Python Django logo" loading="lazy" />
         </ul>
         <ul className="frontend">
           <h4>Front-Ends:</h4>
-          <img className="stackImg" src={reactImg} alt="react.js" loading="lazy" />
-          <hr />
-          <img
-            className="stackImg" src={angularImg} alt="Angular" loading="lazy" />
-          <hr />
-          <img className="stackImg" src={basicImg} alt="HTML5, CSS3 AND JavaScript" loading="lazy" />
+          <img className="stackImg" src={reactImg} alt="react.js logo" loading="lazy" />
+          <img className="stackImg" src={wpImg} alt="Word Press logo" loading="lazy" />
+          <img className="stackImg" src={basicImg} alt="HTML5, CSS3 AND JavaScript logos" loading="lazy" />
         </ul>
       </div>
 
