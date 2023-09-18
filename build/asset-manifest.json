@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.1d73551c.css",
-    "main.js": "/static/js/main.ff9af33c.js",
+    "main.css": "/static/css/main.0dc3c228.css",
+    "main.js": "/static/js/main.e8d84d74.js",
     "static/media/closeUp.webp": "/static/media/closeUp.b3e505b6596fb3b2fe1e.webp",
     "static/media/datenightorganizer.png": "/static/media/datenightorganizer.d052f36a454c1cb8dc11.png",
     "static/media/cyberdefense.png": "/static/media/cyberdefense.9d83f16f8c1a3cb6e84f.png",
@@ -34,11 +34,11 @@
     "static/media/WordPress.svg": "/static/media/WordPress.85a8382d2037243b4b58d19f368a79db.svg",
     "static/media/bars-solid.svg": "/static/media/bars-solid.34b6d4f73e126d6b67d3b1d06f2ad1c7.svg",
     "index.html": "/index.html",
-    "main.1d73551c.css.map": "/static/css/main.1d73551c.css.map",
-    "main.ff9af33c.js.map": "/static/js/main.ff9af33c.js.map"
+    "main.0dc3c228.css.map": "/static/css/main.0dc3c228.css.map",
+    "main.e8d84d74.js.map": "/static/js/main.e8d84d74.js.map"
   },
   "entrypoints": [
-    "static/css/main.1d73551c.css",
-    "static/js/main.ff9af33c.js"
+    "static/css/main.0dc3c228.css",
+    "static/js/main.e8d84d74.js"
   ]
 }
