@@ -1,26 +1,28 @@
 import React from 'react';
 import "./ProjectItem.css";
 
-const ProjectItem = ({ url, projectName, image, description, DeploymentUrl }) => {
+const ProjectItem = ({ url, projectName, image, description, deploymentUrl }) => {
   return (
-    <section className="pi-item">
-      <h3 className="pi-title" href={DeploymentUrl}>{projectName}</h3>
-      <img href={DeploymentUrl} className="pi-img" src={image} alt={projectName} />
+    <article className="project-card">
+      <img className="project-image" src={image} alt={projectName + ' screenshot'} />
+      <div className="project-content">
+        <h3 className="project-title">{projectName}</h3>
+        <p className="project-description">{description}</p>
+        <div className="project-links">
+          <a className="project-link" href={url} target="_blank" rel="noopener noreferrer">
+            <button className="git-link">GitHub Repo</button>
+          </a>
+          {deploymentUrl ? (
+            <a className="project-link" href={deploymentUrl} target="_blank" rel="noopener noreferrer">
+              <button className="deploy-link">Live Site</button>
+            </a>
+          ) : (
+            <button className="deploy-link" disabled>Not Deployed</button>
+          )}
+        </div>
+      </div>
+    </article>
+  );
+};
 
-      <h5 className='pi-description'>{description}</h5>
-      <a className="pi-link" href={url}>
-        <button className="git-link">The code for the project on github</button>
-      </a>
-      {DeploymentUrl == "WIP" ?
-        <a className="WIP" href={DeploymentUrl}>
-          <button className="WIP">Still in development</button>
-        </a> :
-        <a className="pi-link" href={DeploymentUrl}>
-          <button className="deploy-link">The deployed site</button>
-        </a>
-      }
-    </section>
-  )
-}
-
-export default ProjectItem
+export default ProjectItem;

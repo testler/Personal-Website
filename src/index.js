@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import React from "react";
 import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { HelmetProvider } from "react-helmet-async";
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 
@@ -11,8 +11,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Router>
     <React.StrictMode>
-      <Helmet title="Joshua Garst's Portfolio" />
-      <App id="app" />
+      <HelmetProvider>
+        <App id="app" />
+      </HelmetProvider>
     </React.StrictMode>
   </Router>
 );

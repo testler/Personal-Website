@@ -1,0 +1,112 @@
+@import '../../styles/variables.css';
+
+.project-card {
+  background: rgba(20, 22, 24, 0.98);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.28);
+  border: 1.5px solid #232526;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform var(--transition-normal) var(--transition-timing),
+              box-shadow var(--transition-normal) var(--transition-timing);
+  padding-bottom: var(--spacing-6);
+}
+
+.project-card:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.35);
+  border-color: #007bff;
+}
+
+.project-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.18);
+  background: #232526;
+}
+
+.project-content {
+  padding: var(--spacing-8) var(--spacing-6) var(--spacing-4) var(--spacing-6);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-4);
+}
+
+.project-title {
+  font-size: var(--font-size-2xl);
+  color: #fff;
+  font-weight: 800;
+  margin-bottom: var(--spacing-2);
+  text-shadow: 0 2px 8px #000, var(--text-stroke-thin-dark);
+}
+
+.project-description {
+  font-size: var(--font-size-lg);
+  color: #e6e6e6;
+  margin-bottom: var(--spacing-4);
+  line-height: var(--line-height-relaxed);
+  text-shadow: 0 1px 4px #000, var(--text-stroke-thin-dark);
+}
+
+.project-links {
+  display: flex;
+  gap: var(--spacing-6);
+  width: 100%;
+  margin-top: var(--spacing-2);
+  margin-bottom: var(--spacing-2);
+}
+
+.project-link {
+  text-decoration: none;
+  padding: 10px;
+}
+
+.git-link, .deploy-link {
+  padding: var(--spacing-3) var(--spacing-8);
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: var(--font-size-lg);
+  border: none;
+  outline: none;
+  background: #232526;
+  color: #fff;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.18);
+  transition: transform var(--transition-normal) var(--transition-timing),
+              box-shadow var(--transition-normal) var(--transition-timing),
+              background var(--transition-normal) var(--transition-timing);
+  cursor: pointer;
+  margin-bottom: var(--spacing-2);
+}
+
+.git-link:hover, .deploy-link:hover:enabled {
+  background: #007bff;
+  color: #fff;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.25);
+}
+
+.deploy-link[disabled] {
+  background: #444;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+@media screen and (max-width: 600px) {
+  .project-image {
+    height: 120px;
+  }
+  .project-content {
+    padding: var(--spacing-4) var(--spacing-2) var(--spacing-2) var(--spacing-2);
+  }
+  .git-link, .deploy-link {
+    padding: var(--spacing-2) var(--spacing-4);
+    font-size: var(--font-size-base);
+  }
+}

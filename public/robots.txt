@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://joshua-garst-portfolio-website.netlify.app/sitemap.xml 

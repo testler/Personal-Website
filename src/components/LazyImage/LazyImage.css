@@ -1,0 +1,66 @@
+@import '../../styles/variables.css';
+
+.lazy-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 100px;
+  background: var(--background-off);
+  overflow: hidden;
+}
+
+.lazy-image-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--background-off) 0%,
+    var(--background-light) 50%,
+    var(--background-off) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  z-index: 1;
+}
+
+.lazy-image-container.loaded::before {
+  display: none;
+}
+
+.lazy-load {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity var(--transition-normal) var(--transition-timing);
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.lazy-load.loaded {
+  opacity: 1;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Performance optimizations */
+@media (prefers-reduced-motion: reduce) {
+  .lazy-image-container::before {
+    animation: none;
+  }
+
+  .lazy-load {
+    transition: none;
+  }
+} 

@@ -1,51 +1,46 @@
 import React from "react";
 import "./About.css";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import index from "./Languages/index";
 
 const About = () => {
   return (
-    <div className="about-div" id="outlet">
+    <main className="about-div" id="outlet">
       <Helmet>
         <title>Joshua Garst's Portfolio | About</title>
+        <meta name="description" content="Learn more about Joshua Garst, a software engineer with a background in fulfillment logistics, management, and e-commerce. Explore his skills, tools, and programming languages." />
       </Helmet>
-      <div className="main-about">
-        <h3 className="page-title">About</h3>
-        <p>
-          Software engineer with a background in fulfillment logistics,
-          management, and e-commerce. Education in full-stack end-to-end
-          development. My experience and education enable me to create strong
-          teams that work effectively to solve complex problems and create
-          innovative solutions.
-        </p>
+      <div className="about-cards-container">
+        <section className="about-card about-main-card">
+          <h1 className="about-title">About Me</h1>
+          <p className="about-intro">
+            Software engineer with a background in fulfillment logistics, management, and e-commerce. Education in full-stack end-to-end development. My experience and education enable me to create strong teams that work effectively to solve complex problems and create innovative solutions.
+          </p>
+        </section>
+        <section className="about-card about-skills-card">
+          <h2 className="about-section-title">Tools & Skills</h2>
+          <div className="about-skills-grid">
+            {index.tools.map((tool) => (
+              <div key={tool.name} className="about-skill-item">
+                <img src={tool.img} alt={`Logo for ${tool.name}`} className="about-skill-icon" />
+                <span>{tool.name}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+        <section className="about-card about-langs-card">
+          <h2 className="about-section-title">Programming Languages</h2>
+          <div className="about-skills-grid">
+            {index.langs.map((lang) => (
+              <div key={lang.name} className="about-skill-item">
+                <img src={lang.img} alt={`Logo for ${lang.name}`} className="about-skill-icon" />
+                <span>{lang.name}</span>
+              </div>
+            ))}
+          </div>
+        </section>
       </div>
-      <section className="left-about">
-        <ul>
-          <h5>Tools and Skills</h5>
-          {index.tools.map((tool) => {
-            return (
-              <li key={tool.name}>
-                <img src={tool.img} alt={tool.name} className="about-icon"/>
-                <h6>{tool.name}</h6>
-              </li>
-            );
-          })}
-        </ul>
-      </section>
-      <section className="right-about">
-        <ul>
-          <h5>Programming Languages</h5>
-          {index.langs.map((lang) => {
-            return (
-              <li key={lang.name}>
-                <img src={lang.img} alt={lang.name} className="about-icon"/>
-                <h6>{lang.name}</h6>
-              </li>
-            );
-          })}
-        </ul>
-      </section>
-    </div>
+    </main>
   );
 };
 

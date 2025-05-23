@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from 'react-helmet-async';
 import "./Home.css";
 import img from "./closeUp.webp";
 import reactImg from "./react.webp";
@@ -31,18 +31,40 @@ const Home = () => {
 
   const srcset = imageSizes.map((size) => `${size.img} ${size.label}`).join(', ');
   return (
-    <div className="home-div">
+    <main className="home-div">
       <Helmet>
         <title>Joshua Garst's Portfolio</title>
+        <meta name="description" content="Welcome to Joshua Garst's portfolio website. I am a Full-stack Software Engineer specializing in C#, Node.js, Python Django, React, WordPress, and more." />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://joshuagarst.com/" />
+        <meta property="og:title" content="Joshua Garst - Full-stack Software Engineer" />
+        <meta property="og:description" content="Full-stack Software Engineer specializing in C#, Node.js, Python Django, React, WordPress, and more." />
+        <meta property="og:image" content={img} />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://joshuagarst.com/" />
+        <meta property="twitter:title" content="Joshua Garst - Full-stack Software Engineer" />
+        <meta property="twitter:description" content="Full-stack Software Engineer specializing in C#, Node.js, Python Django, React, WordPress, and more." />
+        <meta property="twitter:image" content={img} />
+
+        {/* Additional SEO meta tags */}
+        <meta name="keywords" content="software engineer, full-stack developer, web development, C#, Node.js, Python, Django, React, WordPress" />
+        <meta name="author" content="Joshua Garst" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://joshuagarst.com/" />
       </Helmet>
       <div id="top-div">
         <section className="img-block">
           <img
             className="home-img"
             src={img}
-            alt="A photo of Joshua Garst"
+            alt="A professional photo of Joshua Garst, a software engineer"
             srcSet={srcset}
             sizes="(min-width: 780px) 56.26vw, 75vw"
+            loading="eager"
           />
 
         </section>
@@ -53,15 +75,27 @@ const Home = () => {
         </section>
       </div>
       <h3 className="tech-title">Primary Technologies</h3>
-      <ul className="tech">
-        <img className="stackImg" src={cSharpImg} alt="C Sharp logo" />
-        <img className="stackImg" src={nodeImg} alt="node.js logo" />
-        <img className="stackImg" src={pydjImg} alt="Python Django logo" />
-        <img className="stackImg" src={reactImg} alt="react.js logo" />
-        <img className="stackImg" src={wpImg} alt="Word Press logo" />
-        <img className="stackImg" src={basicImg} alt="HTML5, CSS3 AND JavaScript logos" />
-      </ul>
-    </div>
+      <div className="tech" role="list" aria-label="Primary technologies">
+        <div role="listitem">
+          <img className="stackImg" src={cSharpImg} alt="C# programming language logo" loading="lazy" />
+        </div>
+        <div role="listitem">
+          <img className="stackImg" src={nodeImg} alt="Node.js runtime environment logo" loading="lazy" />
+        </div>
+        <div role="listitem">
+          <img className="stackImg" src={pydjImg} alt="Python Django web framework logo" loading="lazy" />
+        </div>
+        <div role="listitem">
+          <img className="stackImg" src={reactImg} alt="React.js JavaScript library logo" loading="lazy" />
+        </div>
+        <div role="listitem">
+          <img className="stackImg" src={wpImg} alt="WordPress content management system logo" loading="lazy" />
+        </div>
+        <div role="listitem">
+          <img className="stackImg" src={basicImg} alt="HTML5, CSS3 and JavaScript web technologies logos" loading="lazy" />
+        </div>
+      </div>
+    </main>
   );
 };
 
