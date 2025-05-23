@@ -73,3 +73,129 @@ self.addEventListener('message', (event) => {
 });
 
 // Any other custom service worker logic can go here.
+
+const CACHE_NAME = 'portfolio-cache-v1';
+const STATIC_CACHE = 'static-cache-v1';
+const DYNAMIC_CACHE = 'dynamic-cache-v1';
+
+// Assets to cache immediately
+const STATIC_ASSETS = [
+  '/',
+  '/index.html',
+  '/static/css/main.css',
+  '/static/js/main.js',
+  '/assets/profile.webp',
+  '/assets/typescript.svg',
+  '/assets/nodedotjs.svg',
+  '/assets/express.svg',
+  '/assets/css3.svg',
+  '/assets/htmx.svg',
+  '/assets/html5.svg',
+  '/assets/mongoose.svg',
+  '/assets/mongodb.svg',
+  '/assets/python.svg',
+  '/assets/react.svg',
+  '/assets/jquery.svg',
+  '/assets/dotnet.svg',
+  '/assets/js.svg'
+];
+
+// Install event - cache static assets
+self.addEventListener('install', (event) => {
+  event.waitUntil(
+    Promise.all([
+      caches.open(STATIC_CACHE).then((cache) => {
+        return cache.addAll(STATIC_ASSETS);
+      }),
+      caches.open(DYNAMIC_CACHE)
+    ])
+  );
+});
+
+// Activate event - clean up old caches
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames
+          .filter((name) => name !== STATIC_CACHE && name !== DYNAMIC_CACHE)
+          .map((name) => caches.delete(name))
+      );
+    })
+  );
+});
+
+// Fetch event - implement caching strategies
+self.addEventListener('fetch', (event) => {
+  const request = event.request;
+  
+  // Skip non-GET requests
+  if (request.method !== 'GET') return;
+
+  // Handle API requests with network-first strategy
+  if (request.url.includes('/api/')) {
+    event.respondWith(networkFirstStrategy(request));
+    return;
+  }
+
+  // Handle static assets with cache-first strategy
+  if (isStaticAsset(request.url)) {
+    event.respondWith(cacheFirstStrategy(request));
+    return;
+  }
+
+  // Default to stale-while-revalidate strategy
+  event.respondWith(staleWhileRevalidateStrategy(request));
+});
+
+// Cache-first strategy for static assets
+async function cacheFirstStrategy(request) {
+  const cachedResponse = await caches.match(request);
+  if (cachedResponse) {
+    return cachedResponse;
+  }
+  
+  try {
+    const networkResponse = await fetch(request);
+    const cache = await caches.open(DYNAMIC_CACHE);
+    cache.put(request, networkResponse.clone());
+    return networkResponse;
+  } catch (error) {
+    return new Response('Network error', { status: 503 });
+  }
+}
+
+// Network-first strategy for API requests
+async function networkFirstStrategy(request) {
+  try {
+    const networkResponse = await fetch(request);
+    const cache = await caches.open(DYNAMIC_CACHE);
+    cache.put(request, networkResponse.clone());
+    return networkResponse;
+  } catch (error) {
+    const cachedResponse = await caches.match(request);
+    if (cachedResponse) {
+      return cachedResponse;
+    }
+    return new Response('Network error', { status: 503 });
+  }
+}
+
+// Stale-while-revalidate strategy for other requests
+async function staleWhileRevalidateStrategy(request) {
+  const cachedResponse = await caches.match(request);
+  
+  const fetchPromise = fetch(request).then((networkResponse) => {
+    const cache = caches.open(DYNAMIC_CACHE);
+    cache.put(request, networkResponse.clone());
+    return networkResponse;
+  });
+
+  return cachedResponse || fetchPromise;
+}
+
+// Helper function to check if a URL is a static asset
+function isStaticAsset(url) {
+  return STATIC_ASSETS.some(asset => url.endsWith(asset)) ||
+         url.match(/\.(js|css|png|jpg|jpeg|gif|svg|webp)$/);
+}

@@ -20,6 +20,7 @@
   justify-content: center;
   gap: var(--spacing-8);
   padding: var(--spacing-6) 0 var(--spacing-4) 0;
+  contain: content;
 }
 
 .hero-content {
@@ -117,8 +118,11 @@
 }
 
 .profile-image {
-  width: 100%;
+  max-width: 100%;
   height: auto;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
   border-radius: 1.5rem;
   object-fit: cover;
   min-height: 180px;
@@ -160,6 +164,7 @@
   padding: var(--spacing-8) var(--spacing-4) 0 var(--spacing-4);
   box-sizing: border-box;
   overflow: visible;
+  contain: content;
 }
 
 .tech-item {
@@ -190,6 +195,9 @@
   height: 48px;
   object-fit: contain;
   filter: brightness(0) invert(1);
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .tech-item span {

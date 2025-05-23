@@ -40,7 +40,15 @@ const Home = () => {
           </div>
         </div>
         <div className="hero-image">
-          <img src={profileImg} alt="Joshua Garst" className="profile-image" />
+          <img 
+            src={profileImg} 
+            alt="Joshua Garst" 
+            className="profile-image"
+            loading="lazy"
+            width="300"
+            height="300"
+            decoding="async"
+          />
         </div>
       </section>
 
@@ -49,7 +57,15 @@ const Home = () => {
         <div className="tech-grid">
           {techIcons.map(icon => (
             <div className="tech-item" key={icon.name}>
-              <img src={icon.src} alt={icon.name} className="tech-icon" />
+              <img 
+                src={icon.src} 
+                alt={icon.name} 
+                className="tech-icon"
+                loading="lazy"
+                width="48"
+                height="48"
+                decoding="async"
+              />
               <span>{icon.name}</span>
             </div>
           ))}
