@@ -1,0 +1,27 @@
+:root {
+  /* Core scene backgrounds */
+  --core-bg-1: #151f41;
+  --core-bg-2: #0b1023;
+  --core-bg-3: #070a17;
+
+  /* Panel styling */
+  --panel-bg-1: rgba(5, 10, 23, 0.92);
+  --panel-bg-2: rgba(9, 20, 39, 0.84);
+  --panel-border: rgba(105, 207, 255, 0.42);
+  --panel-copy: #f1fbff;
+  --panel-accent: #8be4ff;
+
+  /* Glow colors (Tron Legacy) */
+  --glow-cyan: #00ccff;
+  --glow-blue: #3399ff;
+  --glow-soft: rgba(0, 180, 255, 0.12);
+
+  /* Typography */
+  --comic-title-font: "Impact", "Arial Black", sans-serif;
+  --comic-body-font: var(--font-family);
+
+  /* Animation timing */
+  --motion-fast: 180ms;
+  --motion-normal: 260ms;
+  --motion-slow: 420ms;
+}

@@ -1,0 +1,48 @@
+/**
+ * Legacy URL redirects. New URLs are defined in story-routing.config.js.
+ */
+const ROUTES_CONFIG = {
+  redirects: [
+    { from: '/personal-life', to: '/personal-dossier' },
+    { from: '/career', to: '/tech-career' },
+    { from: '/education', to: '/my-stack' },
+    { from: '/projects-intro', to: '/projects' },
+    { from: '/contactMe', to: '/contact' },
+    { from: '/about', to: '/personal-dossier' },
+    { from: '/about-intro', to: '/personal-dossier' },
+    { from: '/resume-page', to: '/resume' },
+    { from: '/start', to: '/' },
+    { from: '/in-a-hurry', to: '/opening' },
+    { from: '/elevator-pitch', to: '/personal-dossier' },
+    { from: '/about-origin', to: '/personal-dossier' },
+    { from: '/hopes-and-dreams', to: '/personal-dossier' },
+    { from: '/hobbies', to: '/personal-dossier-2' },
+    { from: '/hobbies-garden', to: '/nontech-career' },
+    { from: '/hobbies-maker', to: '/personal-dossier-2' },
+    { from: '/hobbies-gaming', to: '/personal-dossier-2' },
+    { from: '/hobbies-misc', to: '/personal-dossier-2' },
+    { from: '/experience-intro', to: '/tech-career' },
+    { from: '/software-career', to: '/tech-career' },
+    { from: '/fundamental-experience', to: '/nontech-career' },
+    { from: '/volunteer-experience', to: '/nontech-career-2' },
+    { from: '/enterprise-projects', to: '/projects' },
+    { from: '/frontend-projects', to: '/projects' },
+    { from: '/backend-projects', to: '/projects' },
+    { from: '/cyber-defense', to: '/cyberdefense' },
+    { from: '/the-cube-experiment', to: '/the-cube' },
+    { from: '/tech-intro', to: '/my-stack' },
+    { from: '/rules-of-coding', to: '/my-approach' },
+    { from: '/work-style', to: '/my-approach' },
+    { from: '/least-favorite-tech', to: '/my-stack-2' },
+    { from: '/personality-intro', to: '/personal-dossier' },
+    { from: '/problem-solving', to: '/my-approach' },
+    { from: '/why-this-format', to: '/why-this-site' },
+    { from: '/faith', to: '/personal-dossier' },
+    { from: '/family', to: '/personal-dossier' },
+    { from: '/databases', to: '/my-stack-2' },
+    { from: '/career-goals', to: '/tech-career-3' },
+    { from: '/tech-list', to: '/my-stack-2' },
+  ],
+};
+
+export default ROUTES_CONFIG;

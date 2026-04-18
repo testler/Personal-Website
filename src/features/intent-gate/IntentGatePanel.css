@@ -1,0 +1,105 @@
+.intent-gate-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(21, 58, 112, 0.26), rgba(4, 8, 20, 0.84) 70%),
+    rgba(4, 8, 20, 0.76);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.intent-gate-card {
+  width: min(92vw, 740px);
+  border: 1px solid rgba(120, 198, 255, 0.56);
+  border-radius: 14px;
+  background: linear-gradient(160deg, rgba(5, 12, 28, 0.98), rgba(8, 21, 45, 0.97));
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.54);
+  padding: 18px;
+  color: #fff;
+}
+
+.intent-gate-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+}
+
+.intent-gate-top h2 {
+  margin: 0;
+  font-family: "Impact", "Arial Black", sans-serif;
+  font-size: clamp(24px, 3.4vw, 32px);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.intent-gate-top button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(158, 227, 255, 0.48);
+  border-radius: 8px;
+  background: rgba(4, 18, 39, 0.9);
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.intent-gate-card > p {
+  margin: 8px 0 16px;
+  color: #dff4ff;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.intent-gate-options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.intent-gate-options button {
+  text-align: left;
+  border: 1px solid rgba(143, 220, 255, 0.5);
+  border-radius: 9px;
+  background: linear-gradient(160deg, rgba(5, 17, 36, 0.84), rgba(7, 24, 49, 0.8));
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-size: clamp(13px, 1.2vw, 14px);
+  padding: 12px;
+  cursor: pointer;
+  transition: transform 170ms ease, background 170ms ease, box-shadow 170ms ease;
+}
+
+.intent-gate-options button:hover {
+  background: linear-gradient(160deg, rgba(9, 46, 87, 0.94), rgba(10, 61, 115, 0.92));
+  transform: translateX(3px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+}
+
+@media screen and (max-width: 768px) {
+  .intent-gate-backdrop {
+    align-items: flex-start;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: max(20px, env(safe-area-inset-top)) 16px max(20px, env(safe-area-inset-bottom));
+  }
+
+  .intent-gate-card {
+    width: min(96vw, 740px);
+  }
+
+  .intent-gate-options {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .intent-gate-options button {
+    font-size: 12px;
+    padding: 10px 8px;
+  }
+}
