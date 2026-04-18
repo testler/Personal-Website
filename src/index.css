@@ -1,36 +1,41 @@
-/* Preload web fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed&display=swap');
+
 @font-face {
-  font-family: "Mars";
+  font-family: 'Mars';
   src: url(../fonts/Mars.otf);
   font-display: swap;
 }
+
 @font-face {
-  font-family: "BerlinFraktur";
+  font-family: 'BerlinFraktur';
   src: url(../fonts/BerlinFraktur-24.otf);
   font-display: swap;
 }
+
 @font-face {
-  font-family: "Kusanagi";
+  font-family: 'Kusanagi';
   src: url(../fonts/Kusanagi.otf);
   font-display: swap;
 }
+
 @font-face {
-  font-family: "NEOSTEEL";
+  font-family: 'NEOSTEEL';
   src: url(../fonts/NEOSTEEL.otf);
   font-display: swap;
 }
+
 @font-face {
-  font-family: "ONEDAY";
+  font-family: 'ONEDAY';
   src: url(../fonts/ONEDAY.otf);
   font-display: swap;
 }
+
 @font-face {
-  font-family: "retrophile-regular";
+  font-family: 'retrophile-regular';
   src: url(../fonts/retrophile-regular.otf);
   font-display: swap;
 }
 
-/* Update font declarations in :root with Google Fonts */
 :root {
   --font1: 'Mars', 'Bebas Neue', cursive;
   --font2: 'Bebas Neue', cursive;
@@ -42,30 +47,3 @@
   --font8: 'retrophile-regular', cursive;
   --grey1: #475b5a;
 }
-
-/* Import Google Fonts with display=swap */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed&display=swap');
-*{
-  overflow-x: hidden;
-}
-h1{
-  font-family: var(--font1)
-}
-h2, h3, h4, h6, h5, a ,p,li,ul{
-  font-family: var(--font6)
-}
-HTML{
-  background: url('./8-Bit_Forest.webp') repeat;
-  background-color: rgb(23, 23, 23);
-}
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
-.page-title{
-  font-family: var(--font5);
-  color: black;
-  background: linear-gradient(90deg,transparent, rgba(255, 255, 255, 0.75), transparent);
-}
-
