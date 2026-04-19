@@ -1,0 +1,39 @@
+# Joshua Garst
+
+> Full-Stack Software Engineer based in Northwest Arkansas. Full-Stack Developer II at Sharp Hue (Fayetteville, AR). 3+ years of professional experience in .NET, C#, ASP.NET, Azure, JavaScript, and React.
+
+This site is an interactive graphic-novel-style portfolio. Content is organized into passages navigable from a central hub called The Core. The canonical, machine-readable content overview is in `/llms-full.txt`.
+
+## About
+
+- [Home](https://joshua-garst-portfolio-website.netlify.app/): Landing page and introduction
+- [The Core](https://joshua-garst-portfolio-website.netlify.app/core): Hub linking to every section of the site
+- [Personal Dossier](https://joshua-garst-portfolio-website.netlify.app/personal-dossier): Faith, family, hobbies, and personal background
+
+## Career
+
+- [Tech Career](https://joshua-garst-portfolio-website.netlify.app/tech-career): Professional software engineering experience at Sharp Hue — enterprise .NET, Dynamics 365 CRM, Azure, and CI/CD
+- [Non-Tech Career](https://joshua-garst-portfolio-website.netlify.app/nontech-career): Pre-software-engineering career, including farming, homestead work, and other hands-on experience
+- [My Approach](https://joshua-garst-portfolio-website.netlify.app/my-approach): Problem-solving philosophy, code quality principles, and engineering style
+
+## Projects
+
+- [Projects Overview](https://joshua-garst-portfolio-website.netlify.app/projects): Summary of personal projects
+- [CyberDefense](https://joshua-garst-portfolio-website.netlify.app/cyberdefense): Browser-based tower defense game (vanilla HTML, CSS, JavaScript — no framework)
+- [Date Night Organizer](https://joshua-garst-portfolio-website.netlify.app/date-night-organizer): Full-stack scheduling app (Node, Express, EJS, MongoDB)
+- [Movie App](https://joshua-garst-portfolio-website.netlify.app/movie-app): MERN stack project (MongoDB, Express, React, Node)
+- [The Cube](https://joshua-garst-portfolio-website.netlify.app/the-cube): Interactive 3D experiment (React Three Fiber on top of Three.js)
+- [Currently Building](https://joshua-garst-portfolio-website.netlify.app/currently-building): Active personal projects
+
+## Tech Stack
+
+- [My Stack](https://joshua-garst-portfolio-website.netlify.app/my-stack): Full list of languages, frameworks, and tools
+
+## Contact
+
+- [Contact](https://joshua-garst-portfolio-website.netlify.app/contact): Direct contact page (email only for now)
+- [My Contact](https://joshua-garst-portfolio-website.netlify.app/my-contact): Longer-form contact section with response expectations
+- [Resume](https://joshua-garst-portfolio-website.netlify.app/resume): Downloadable resume (PDF and DOCX)
+- [LinkedIn](https://www.linkedin.com/in/joshua-garst/)
+- [GitHub](https://github.com/testler)
+- Email: joshuagarst@gmail.com

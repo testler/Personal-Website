@@ -14,7 +14,6 @@ const SchemaMarkup = () => {
     "jobTitle": "Full-Stack Software Engineer",
     "description": "Full-stack .NET software engineer with 3+ years professional experience in enterprise CRM systems, Azure cloud services, C#, and JavaScript. Builds reliable, data-driven systems that real people rely on every day.",
     "email": "joshuagarst@gmail.com",
-    "telephone": "+1-940-783-0938",
     "image": `${SITE_URL}/og-preview.jpg`,
     "sameAs": [
       "https://github.com/testler",
@@ -124,7 +123,7 @@ const SchemaMarkup = () => {
         "name": "How can I contact Joshua Garst?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Joshua Garst can be reached via email at joshuagarst@gmail.com, by phone at 940-783-0938, on LinkedIn at linkedin.com/in/joshua-garst, or on GitHub at github.com/testler."
+          "text": "Joshua Garst can be reached via email at joshuagarst@gmail.com, on LinkedIn at linkedin.com/in/joshua-garst, or on GitHub at github.com/testler."
         }
       }
     ]

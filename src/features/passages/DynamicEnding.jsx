@@ -94,7 +94,7 @@ export default function DynamicEnding() {
         'Okay, {NAME}I have to say it. {COUNT} of 12 sections. You went through basically all of it.',
         'That is rare, and it tells me something. You are either a recruiter who does their homework, a fellow engineer who respects craft, or someone who genuinely wanted to know who I am. All three are the kind of people I want to work with.',
         'If you have read this far, email me. Seriously. Whatever the reason. I will read it and I will write back.',
-        'joshuagarst@gmail.com\n(940) 783-0938',
+        'joshuagarst@gmail.com',
       ]}
       recommendations={[
         { label: 'One more look at The Core', toPassage: 'the-core' },

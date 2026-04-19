@@ -558,7 +558,7 @@ const STORY_MAP = {
       prompt: '*opening direct channel*',
       paragraphs: [
         'The easiest way to reach me:',
-        'Email: joshuagarst@gmail.com\nPhone: (940) 783-0938\nLocation: Bentonville, Arkansas',
+        'Email: joshuagarst@gmail.com\nLocation: Bentonville, Arkansas',
         'I read every message.',
       ],
       photoKey: 'my_contact',
@@ -583,7 +583,7 @@ const STORY_MAP = {
       title: 'My Contact',
       prompt: '*response time*',
       paragraphs: [
-        'I read email within a day and reply within two. If it is truly urgent, the phone number is real.',
+        'I read email within a day and reply within two. LinkedIn DMs also work if you prefer.',
         'Where to next{NAME_COMMA}?',
       ],
       photoKey: 'my_contact',
@@ -605,7 +605,7 @@ const STORY_MAP = {
       title: 'Contact',
       prompt: '*direct channel open*',
       paragraphs: [
-        'Email: joshuagarst@gmail.com\nPhone: (940) 783-0938\nLinkedIn: linkedin.com/in/joshua-garst\nGitHub: github.com/testler',
+        'Email: joshuagarst@gmail.com\nLinkedIn: linkedin.com/in/joshua-garst\nGitHub: github.com/testler',
         'Based in Bentonville, Arkansas.',
       ],
       photoKey: 'my_contact',

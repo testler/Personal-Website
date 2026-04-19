@@ -21,7 +21,6 @@ const CONTACT_LINKS = {
   type: 'contact-links',
   channels: [
     { label: 'Email', value: 'joshuagarst@gmail.com', href: 'mailto:joshuagarst@gmail.com' },
-    { label: 'Phone', value: '+1 (940) 783-0938', href: 'tel:+19407830938' },
     { label: 'GitHub', value: 'github.com/testler', href: 'https://github.com/testler', external: true },
     { label: 'LinkedIn', value: 'linkedin.com/in/joshua-garst', href: 'https://www.linkedin.com/in/joshua-garst/', external: true },
   ],
