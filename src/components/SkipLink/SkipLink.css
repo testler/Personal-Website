@@ -2,9 +2,10 @@
   position: absolute;
   top: -40px;
   left: 0;
-  background: #007bff;
-  color: white;
-  padding: 8px;
+  background: #0b3d91;
+  color: #ffffff;
+  padding: 8px 12px;
+  font-weight: 600;
   z-index: 100;
   transition: top 0.2s ease;
 }
