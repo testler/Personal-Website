@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import './GuideCharacter.css';
-import standingImg from '../../assets/standing_transparent_bg_Looking_left.png';
+import standingImg from '../../assets/standing_transparent_bg_Looking_left.webp';
 import guideScripts from './guideScripts';
 
 function GuideCharacter({ page, enabled = true, eventKey = '', eventNonce = 0 }) {

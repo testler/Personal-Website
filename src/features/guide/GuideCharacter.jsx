@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import standingImg from '../../assets/standing_transparent_bg_Looking_left.png';
+import standingImg from '../../assets/standing_transparent_bg_Looking_left.webp';
 import DIALOGUE_CONFIG from '../../content/dialogue.config';
 import './GuideCharacter.css';
 

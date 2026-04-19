@@ -8,16 +8,16 @@ import PassageExtrasRenderer from './PassageExtras';
 import DynamicEnding from './DynamicEnding';
 import CoreHubScene from './CoreHubScene';
 
-import standingImg from '../../assets/standing_transparent_bg_Looking_left.png';
-import sittingFocusedImg from '../../assets/sitting_coding_not_looking_focused.PNG';
-import sittingWavingImg from '../../assets/sitting_coding_waving_and_smiling.PNG';
-import gamingImg from '../../assets/josh_gaming.png';
-import gardenImg from '../../assets/josh_garden.png';
-import makerImg from '../../assets/josh_maker.png';
-import familyImg from '../../assets/holiday_family.png';
-import careerGoalsImg from '../../assets/Career_Goals.png';
-import techListImg from '../../assets/tech_list.png';
-import faithImg from '../../assets/man_of_faith.png';
+import standingImg from '../../assets/standing_transparent_bg_Looking_left.webp';
+import sittingFocusedImg from '../../assets/sitting_coding_not_looking_focused.webp';
+import sittingWavingImg from '../../assets/sitting_coding_waving_and_smiling.webp';
+import gamingImg from '../../assets/josh_gaming.webp';
+import gardenImg from '../../assets/josh_garden.webp';
+import makerImg from '../../assets/josh_maker.webp';
+import familyImg from '../../assets/holiday_family.webp';
+import careerGoalsImg from '../../assets/Career_Goals.webp';
+import techListImg from '../../assets/tech_list.webp';
+import faithImg from '../../assets/man_of_faith.webp';
 
 import './PassageScene.css';
 
@@ -60,6 +60,23 @@ function applySubstitutions(text, { name, timeMode }) {
     .replace(/\{NAME_COMMA\}/g, nameComma)
     .replace(/\{TIME_MODE\}/g, timeMode)
     .replace(/\{TYPING_SFX\}/g, typingSfx);
+}
+
+const SITE_TAGLINE = 'Joshua Garst — Full-Stack Software Engineer (.NET, C#, React) based in Northwest Arkansas. Interactive graphic-novel portfolio.';
+
+function buildMetaDescription(passage, subs) {
+  if (passage.metaDescription) return applySubstitutions(passage.metaDescription, subs);
+  const paragraphs = (passage.paragraphs || [])
+    .filter((p) => p != null && p !== '')
+    .map((p) => applySubstitutions(p, subs))
+    .map((p) => p.replace(/\*+/g, '').replace(/\s+/g, ' ').trim())
+    .filter((p) => p.length > 10);
+  let cleaned = paragraphs.join(' ');
+  if (!cleaned && passage.prompt) {
+    cleaned = applySubstitutions(passage.prompt, subs).replace(/\*+/g, '').replace(/\s+/g, ' ').trim();
+  }
+  if (!cleaned) cleaned = SITE_TAGLINE;
+  return cleaned.length > 160 ? `${cleaned.slice(0, 157).trim()}…` : cleaned;
 }
 
 export default function PassageScene() {
@@ -186,9 +203,12 @@ export default function PassageScene() {
     );
   }
 
-  const helmetTitle = `Joshua Garst | ${passage.title || passage.sceneLabel}`;
+  const isHome = location.pathname === '/';
+  const helmetTitle = isHome
+    ? 'Joshua Garst | Full-Stack Software Engineer Portfolio (.NET / React) — Northwest Arkansas'
+    : `Joshua Garst | ${passage.title || passage.sceneLabel} — Full-Stack Software Engineer`;
   const canonicalUrl = `https://joshua-garst-portfolio-website.netlify.app${location.pathname}`;
-  const description = applySubstitutions(passage.prompt, subs);
+  const description = buildMetaDescription(passage, subs);
 
   return (
     <div className={`passage-scene ${passage.isPressStart ? 'passage-scene--press-start' : ''} ${passage.isCoreHub ? 'passage-scene--core' : ''}`}>

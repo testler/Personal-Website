@@ -30,7 +30,7 @@ const STORY_MAP = {
       title: 'Press Start',
       prompt: 'JOSHUA GARST',
       paragraphs: [
-        'Portifilio Site // v1.0',
+        'Portfolio Site // v1.0',
         'Full-Stack Developer II in Bentonville, Arkansas.\nSpecializing in .NET, Razor Pages, and React.\nCurrently at Sharp Hue, shipping production software for real clients.',
       ],
       photoKey: 'press_start',

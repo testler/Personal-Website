@@ -9,9 +9,9 @@ import STORY_MAP from '../../content/story-map.config';
 import { resolveRouteForPassage } from '../../content/story-routing.config';
 import IntentGatePanel from '../intent-gate/IntentGatePanel';
 import { useAudio } from '../audio/AudioProvider';
-import sittingFocusedImg from '../../assets/sitting_coding_not_looking_focused.PNG';
-import sittingWavingImg from '../../assets/sitting_coding_waving_and_smiling.PNG';
-import standingImg from '../../assets/standing_transparent_bg_Looking_left.png';
+import sittingFocusedImg from '../../assets/sitting_coding_not_looking_focused.webp';
+import sittingWavingImg from '../../assets/sitting_coding_waving_and_smiling.webp';
+import standingImg from '../../assets/standing_transparent_bg_Looking_left.webp';
 import typingSfx from '../../assets/typing.mp3';
 import './CoreScene.css';
 

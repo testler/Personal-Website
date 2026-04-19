@@ -1,212 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Home / The Core -->
+  <!-- Home / Press Start -->
   <url>
     <loc>https://joshua-garst-portfolio-website.netlify.app/</loc>
+    <lastmod>2026-04-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Entry Points -->
+  <!-- The Core (dodecahedron hub) -->
   <url>
-    <loc>https://joshua-garst-portfolio-website.netlify.app/start</loc>
+    <loc>https://joshua-garst-portfolio-website.netlify.app/core</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- High-value destinations -->
+  <url>
+    <loc>https://joshua-garst-portfolio-website.netlify.app/resume</loc>
+    <lastmod>2026-04-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://joshua-garst-portfolio-website.netlify.app/introduction</loc>
+    <loc>https://joshua-garst-portfolio-website.netlify.app/contact</loc>
+    <lastmod>2026-04-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://joshua-garst-portfolio-website.netlify.app/in-a-hurry</loc>
+    <loc>https://joshua-garst-portfolio-website.netlify.app/tech-career</loc>
+    <lastmod>2026-04-18</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
-
-  <!-- About Me -->
   <url>
-    <loc>https://joshua-garst-portfolio-website.netlify.app/about-intro</loc>
+    <loc>https://joshua-garst-portfolio-website.netlify.app/projects</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://joshua-garst-portfolio-website.netlify.app/my-stack</loc>
+    <lastmod>2026-04-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://joshua-garst-portfolio-website.netlify.app/elevator-pitch</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://joshua-garst-portfolio-website.netlify.app/about-origin</loc>
+    <loc>https://joshua-garst-portfolio-website.netlify.app/my-contact</loc>
+    <lastmod>2026-04-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://joshua-garst-portfolio-website.netlify.app/hopes-and-dreams</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Faith & Family -->
-  <url>
-    <loc>https://joshua-garst-portfolio-website.netlify.app/faith</loc>
+    <loc>https://joshua-garst-portfolio-website.netlify.app/personal-dossier</loc>
+    <lastmod>2026-04-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://joshua-garst-portfolio-website.netlify.app/family</loc>
+    <loc>https://joshua-garst-portfolio-website.netlify.app/nontech-career</loc>
+    <lastmod>2026-04-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
-  <!-- Hobbies -->
   <url>
-    <loc>https://joshua-garst-portfolio-website.netlify.app/hobbies</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://joshua-garst-portfolio-website.netlify.app/hobbies-garden</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://joshua-garst-portfolio-website.netlify.app/hobbies-maker</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://joshua-garst-portfolio-website.netlify.app/hobbies-gaming</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://joshua-garst-portfolio-website.netlify.app/hobbies-misc</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <!-- Career -->
-  <url>
-    <loc>https://joshua-garst-portfolio-website.netlify.app/experience-intro</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://joshua-garst-portfolio-website.netlify.app/software-career</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://joshua-garst-portfolio-website.netlify.app/fundamental-experience</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://joshua-garst-portfolio-website.netlify.app/volunteer-experience</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://joshua-garst-portfolio-website.netlify.app/career-goals</loc>
+    <loc>https://joshua-garst-portfolio-website.netlify.app/my-approach</loc>
+    <lastmod>2026-04-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://joshua-garst-portfolio-website.netlify.app/why-this-site</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 
   <!-- Projects -->
   <url>
-    <loc>https://joshua-garst-portfolio-website.netlify.app/projects-intro</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://joshua-garst-portfolio-website.netlify.app/enterprise-projects</loc>
+    <loc>https://joshua-garst-portfolio-website.netlify.app/cyberdefense</loc>
+    <lastmod>2026-04-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://joshua-garst-portfolio-website.netlify.app/frontend-projects</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://joshua-garst-portfolio-website.netlify.app/backend-projects</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://joshua-garst-portfolio-website.netlify.app/cyber-defense</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://joshua-garst-portfolio-website.netlify.app/date-night-organizer</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://joshua-garst-portfolio-website.netlify.app/the-cube-experiment</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- Tech -->
-  <url>
-    <loc>https://joshua-garst-portfolio-website.netlify.app/tech-intro</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://joshua-garst-portfolio-website.netlify.app/tech-list</loc>
+    <lastmod>2026-04-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://joshua-garst-portfolio-website.netlify.app/databases</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://joshua-garst-portfolio-website.netlify.app/rules-of-coding</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://joshua-garst-portfolio-website.netlify.app/work-style</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://joshua-garst-portfolio-website.netlify.app/least-favorite-tech</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <!-- Personality -->
-  <url>
-    <loc>https://joshua-garst-portfolio-website.netlify.app/personality-intro</loc>
+    <loc>https://joshua-garst-portfolio-website.netlify.app/movie-app</loc>
+    <lastmod>2026-04-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://joshua-garst-portfolio-website.netlify.app/problem-solving</loc>
+    <loc>https://joshua-garst-portfolio-website.netlify.app/the-cube</loc>
+    <lastmod>2026-04-18</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://joshua-garst-portfolio-website.netlify.app/why-this-format</loc>
+    <loc>https://joshua-garst-portfolio-website.netlify.app/currently-building</loc>
+    <lastmod>2026-04-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
-  <!-- Endings / Contact -->
+  <!-- Social destinations -->
   <url>
-    <loc>https://joshua-garst-portfolio-website.netlify.app/resume</loc>
+    <loc>https://joshua-garst-portfolio-website.netlify.app/linkedin</loc>
+    <lastmod>2026-04-18</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://joshua-garst-portfolio-website.netlify.app/contact</loc>
+    <loc>https://joshua-garst-portfolio-website.netlify.app/github</loc>
+    <lastmod>2026-04-18</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
 </urlset>

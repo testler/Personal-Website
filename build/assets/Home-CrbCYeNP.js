@@ -1,0 +1,1 @@
+import{_ as e,a as t}from"./VisitTrackerProvider-k_VTEfCl.js";import n from"./PassageScene-CNAESh6C.js";e();var r=t();function i(){return(0,r.jsx)(n,{})}export{i as default};
