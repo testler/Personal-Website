@@ -99,6 +99,20 @@
     <!-- PWA / Icons -->
     <link rel="manifest" href="/manifest.json" />
     <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-icon-180.png" />
+
+    <!-- Evict stale CRA-era service worker from returning visitors -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function (regs) {
+          regs.forEach(function (reg) { reg.unregister(); });
+        }).catch(function () {});
+        if (window.caches && caches.keys) {
+          caches.keys().then(function (keys) {
+            keys.forEach(function (key) { caches.delete(key); });
+          }).catch(function () {});
+        }
+      }
+    </script>
     <script type="module" crossorigin src="/assets/index-BIOTWdjn.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/VisitTrackerProvider-D_d_lYfE.js">
     <link rel="stylesheet" crossorigin href="/assets/index-BDQ3WYip.css">
