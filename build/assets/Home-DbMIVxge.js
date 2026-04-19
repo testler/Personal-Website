@@ -1,0 +1,1 @@
+import{_ as e,a as t}from"./VisitTrackerProvider-D_d_lYfE.js";import n from"./PassageScene-ipIwiLep.js";e();var r=t();function i(){return(0,r.jsx)(n,{})}export{i as default};

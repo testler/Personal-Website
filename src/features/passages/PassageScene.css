@@ -2,6 +2,7 @@
   position: relative;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   background: radial-gradient(ellipse at 15% 10%, #1b2f62 0%, #0b132e 50%, #060a18 100%);
   color: #ffffff;
@@ -516,24 +517,31 @@
 
 /* ── Responsive ── */
 @media screen and (max-width: 768px) {
+  .passage-scene {
+    height: auto;
+    min-height: 100dvh;
+    overflow: visible;
+  }
+
   .passage-layout {
     flex-direction: column;
     position: relative;
+    min-height: 100dvh;
   }
 
-  /* Character fills the background */
+  /* Character fills the top portion as background */
   .passage-character-panel {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    height: auto;
+    height: 70dvh;
     flex: none;
     padding: 44px 0 0;
     z-index: 0;
     align-items: flex-start;
     justify-content: flex-start;
+    pointer-events: none;
   }
 
   .passage-character-img {
@@ -550,7 +558,8 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 0 16px max(16px, env(safe-area-inset-bottom));
+    padding: 55dvh 16px max(16px, env(safe-area-inset-bottom));
+    max-height: none;
     background: linear-gradient(
       to top,
       rgba(5, 11, 24, 0.98) 0%,
