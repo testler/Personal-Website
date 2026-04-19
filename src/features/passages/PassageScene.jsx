@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import STORY_MAP, { DESTINATION_TO_PASSAGE } from '../../content/story-map.config';
@@ -6,7 +6,8 @@ import { resolvePassageForSlug, resolveRouteForPassage } from '../../content/sto
 import { useVisitTracker } from '../tracking/VisitTrackerProvider';
 import PassageExtrasRenderer from './PassageExtras';
 import DynamicEnding from './DynamicEnding';
-import CoreHubScene from './CoreHubScene';
+
+const CoreHubScene = React.lazy(() => import('./CoreHubScene'));
 
 import standingImg from '../../assets/standing_transparent_bg_Looking_left.webp';
 import sittingFocusedImg from '../../assets/sitting_coding_not_looking_focused.webp';
@@ -244,6 +245,10 @@ export default function PassageScene() {
             src={photoSrc}
             alt="Joshua Garst"
             className="passage-character-img"
+            width="1024"
+            height="1536"
+            fetchpriority="high"
+            decoding="async"
           />
         </div>
 
@@ -271,14 +276,16 @@ export default function PassageScene() {
 
     if (passage.isCoreHub) {
       return (
-        <CoreHubScene
-          visitedIds={visitedDestinations}
-          totalVisited={totalVisited}
-          totalDestinations={totalDestinations}
-          hasSignal={hasSignal}
-          onFollowSignal={() => handleChoice({ toPassage: 'ending' })}
-          onFaceConfirm={(face) => handleChoice({ toPassage: face.toPassage })}
-        />
+        <Suspense fallback={<div className="loading">Loading The Core…</div>}>
+          <CoreHubScene
+            visitedIds={visitedDestinations}
+            totalVisited={totalVisited}
+            totalDestinations={totalDestinations}
+            hasSignal={hasSignal}
+            onFollowSignal={() => handleChoice({ toPassage: 'ending' })}
+            onFaceConfirm={(face) => handleChoice({ toPassage: face.toPassage })}
+          />
+        </Suspense>
       );
     }
 
