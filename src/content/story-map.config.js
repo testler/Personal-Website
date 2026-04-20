@@ -270,7 +270,7 @@ const STORY_MAP = {
         'These are the things I am building right now, today, in real time.',
         '== UNITY MULTIPLAYER GAME ==\nA multiplayer prototype in Unity and C#. A nights-and-weekends project I pick at because I enjoy it. Not deployed, not chasing anything — just a sandbox for stretching into networking, gameplay code, and asset pipelines.',
         '== GARDEN PLANNER ==\nAn Electron app with an internal SQLite database so it works offline. When you are online, it syncs with my own API to pull weather and location data. Built to help plan a large-scale ethnobotanical garden with over a hundred plants.',
-        '== THIS PORTIFILIO ==\nYeah, this. Built in Twine-style branching dialogue as a React app. You are inside it right now.',
+        '== THIS PORTFOLIO ==\nYeah, this. Built in Twine-style branching dialogue as a React app. You are inside it right now.',
       ],
       photoKey: 'projects',
       choices: [
@@ -329,7 +329,7 @@ const STORY_MAP = {
     'website-reason-1': {
       sceneLabel: 'Why Gamify?',
       title: 'Why Gamify?',
-      prompt: 'Why did I make my portifilio into a game? Because I thought it would be fun. For me building it, and for you reading it.',
+      prompt: 'Why did I make my portfolio into a game? Because I thought it would be fun. For me building it, and for you reading it.',
       paragraphs: [
         'I also love video games as a medium. They are one of the most honest forms of human connection we have invented. So why should my portfolio be a boring PDF?',
       ],

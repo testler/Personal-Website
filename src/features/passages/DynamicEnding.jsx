@@ -49,7 +49,7 @@ export default function DynamicEnding() {
         status="*signal fading*"
         heading="The Scout"
         body={[
-          'Well, {NAME}you came, you skimmed, you left. That is okay. Most people skim portifilios.',
+          'Well, {NAME}you came, you skimmed, you left. That is okay. Most people skim portfolios.',
           'You saw {COUNT} of 12 sections. If anything here caught your eye and you want to come back and dig deeper, I will be here.',
         ]}
         recommendations={[
