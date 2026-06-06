@@ -10,8 +10,6 @@ export default function CoreHubScene({
   totalVisited,
   totalDestinations,
   onFaceConfirm,
-  hasSignal,
-  onFollowSignal,
 }) {
   const [labels, setLabels] = useState([]);
   const [selectedFaceId, setSelectedFaceId] = useState('');
@@ -38,13 +36,8 @@ export default function CoreHubScene({
     <div className="core-hub-scene">
       <div className="core-hub-counter-row">
         <span className="core-hub-counter-text">
-          Visited: {totalVisited} / {totalDestinations}
+          Visited {totalVisited} / {totalDestinations}
         </span>
-        {hasSignal && (
-          <button type="button" className="core-hub-signal-btn" onClick={onFollowSignal}>
-            ⚠ SIGNAL — follow it to the ending
-          </button>
-        )}
       </div>
 
       <div className="core-hub-canvas-wrap">

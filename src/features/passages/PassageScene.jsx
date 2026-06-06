@@ -281,8 +281,6 @@ export default function PassageScene() {
             visitedIds={visitedDestinations}
             totalVisited={totalVisited}
             totalDestinations={totalDestinations}
-            hasSignal={hasSignal}
-            onFollowSignal={() => handleChoice({ toPassage: 'ending' })}
             onFaceConfirm={(face) => handleChoice({ toPassage: face.toPassage })}
           />
         </Suspense>
