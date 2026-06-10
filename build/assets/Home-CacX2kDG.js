@@ -1,1 +1,0 @@
-import{n as e,t}from"./jsx-runtime-DWSWI4JT.js";import n from"./PassageScene-C_-cNJG8.js";e();var r=t();function i(){return(0,r.jsx)(n,{})}export{i as default};

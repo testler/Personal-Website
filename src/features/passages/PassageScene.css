@@ -527,25 +527,29 @@
 
 /* ── Responsive ── */
 @media screen and (max-width: 768px) {
+  /* Fixed "game screen": size to the small viewport (100svh = the space left
+     with the browser toolbar expanded) so the page never scrolls and nothing
+     can hide behind Safari/Chrome bottom UI. */
   .passage-scene {
-    height: auto;
-    min-height: 100dvh;
-    overflow: visible;
+    height: 100vh;
+    height: 100svh;
+    overflow: hidden;
   }
 
   .passage-layout {
     flex-direction: column;
     position: relative;
-    min-height: 100dvh;
+    height: 100%;
+    min-height: 0;
   }
 
-  /* Character fills the top portion as background */
+  /* Character art is a backdrop layer behind the dialogue */
   .passage-character-panel {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 70dvh;
+    height: 72svh;
     flex: none;
     padding: 44px 0 0;
     z-index: 0;
@@ -555,26 +559,32 @@
   }
 
   .passage-character-img {
-    max-height: 65vh;
-    max-width: 90vw;
+    max-height: 64svh;
+    max-width: 92vw;
     animation: none;
   }
 
-  /* Dialogue overlays the bottom with gradient fade */
+  /* Dialogue pinned to the bottom, capped to the viewport, with a buffer
+     for the home indicator / browser UI. When a passage runs long the TEXT
+     scrolls internally — the choice buttons are always fully visible. */
   .passage-dialogue-panel {
-    position: relative;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: 1;
-    flex: 1;
+    flex: none;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 55dvh 16px calc(env(safe-area-inset-bottom, 0px) + 40px);
-    max-height: none;
+    max-height: calc(100% - 52px); /* keep the scene tag clear */
+    padding: 26px 16px calc(env(safe-area-inset-bottom, 0px) + 22px);
+    overflow: hidden;
     background: linear-gradient(
       to top,
       rgba(5, 11, 24, 0.98) 0%,
-      rgba(5, 11, 24, 0.94) 40%,
-      rgba(5, 11, 24, 0.55) 68%,
+      rgba(5, 11, 24, 0.94) 55%,
+      rgba(5, 11, 24, 0.72) 82%,
       transparent 100%
     );
   }
@@ -588,10 +598,42 @@
     justify-content: flex-end;
   }
 
-  /* No scrolling on mobile */
+  /* Text may shrink and scroll; everything else holds its size */
   .passage-text-area {
+    flex: 0 1 auto;
+    min-height: 66px;
     max-height: none;
-    overflow: visible;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .passage-speaker-badge,
+  .passage-extras,
+  .passage-name-input,
+  .passage-choices,
+  .passage-next-destination {
+    flex-shrink: 0;
+  }
+
+  /* The ending panel: its story text scrolls, its buttons stay visible */
+  .ending-panel {
+    flex: 0 1 auto;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .ending-body {
+    flex: 0 1 auto;
+    min-height: 48px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .ending-status,
+  .ending-heading,
+  .ending-recommendations,
+  .ending-rating {
+    flex-shrink: 0;
   }
 
   .passage-text {
@@ -644,6 +686,38 @@
 
   .passage-hint {
     text-align: center;
+  }
+}
+
+/* Short phone screens (e.g. iPhone SE with browser UI): tighten densities
+   so every action still fits without scrolling */
+@media screen and (max-width: 768px) and (max-height: 600px) {
+  .passage-dialogue-panel {
+    padding: 18px 16px calc(env(safe-area-inset-bottom, 0px) + 16px);
+    gap: 8px;
+  }
+
+  .passage-text-area {
+    min-height: 40px;
+  }
+
+  .ending-panel {
+    padding: 10px 12px;
+    gap: 6px;
+  }
+
+  .ending-body {
+    min-height: 40px;
+  }
+
+  .ending-heading {
+    font-size: 18px;
+  }
+
+  .ending-recommendations .passage-choice {
+    min-height: 38px;
+    padding: 7px 10px;
+    font-size: 12px;
   }
 }
 
@@ -969,6 +1043,12 @@ button.hero-quick-link {
   text-transform: uppercase;
 }
 
+.ending-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .ending-text {
   margin: 0;
   color: #eaf4ff;
@@ -1053,17 +1133,16 @@ button.hero-quick-link {
     font-size: clamp(22px, 6.4vw, 32px);
   }
 
-  /* Press start: tighten layout so the "Tap to enter" button always fits */
+  /* Press start: hero panel is taller, so give the art a bit less room */
   .passage-scene--press-start .passage-character-panel {
-    height: 50dvh;
+    height: 52svh;
   }
 
   .passage-scene--press-start .passage-character-img {
-    max-height: 46vh;
+    max-height: 46svh;
   }
 
   .passage-scene--press-start .passage-dialogue-panel {
-    padding-top: 42dvh;
     gap: 8px;
   }
 
@@ -1082,7 +1161,24 @@ button.hero-quick-link {
     padding: 4px 10px;
   }
 
+  /* Core hub: the only mobile scene allowed to scroll (the canvas plus an
+     opened destination list can exceed one screen) */
+  .passage-scene--core {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .passage-scene--core .passage-layout {
+    height: auto;
+    min-height: 100%;
+  }
+
   .passage-scene--core .passage-dialogue-panel {
-    padding: 44px 12px 16px;
+    position: static;
+    max-height: none;
+    overflow: visible;
+    background: none;
+    justify-content: flex-start;
+    padding: 44px 12px calc(env(safe-area-inset-bottom, 0px) + 20px);
   }
 }

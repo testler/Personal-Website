@@ -22,18 +22,8 @@ body {
   overflow: hidden;
 }
 
-@media screen and (max-width: 768px) {
-  html,
-  body,
-  #root {
-    height: auto;
-    min-height: 100%;
-  }
-
-  #root {
-    overflow: visible;
-  }
-}
+/* Mobile keeps the same fixed shell as desktop; individual scenes manage
+   their own internal scrolling (see PassageScene.css). */
 
 body {
   font-family: var(--comic-body-font);
@@ -58,9 +48,9 @@ body {
 @media screen and (max-width: 768px) {
   .app,
   .app-main {
-    height: auto;
-    min-height: 100dvh;
-    overflow: visible;
+    /* svh = viewport with browser toolbar expanded; falls back to the
+       base 100dvh on engines without svh support */
+    height: 100svh;
   }
 }
 

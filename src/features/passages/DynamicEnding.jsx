@@ -13,9 +13,11 @@ function EndingShell({ heading, status, body, recommendations, rating, name, tot
     <div className="ending-panel">
       <div className="ending-status">{status}</div>
       <h2 className="ending-heading">{heading}</h2>
-      {body.map((paragraph, i) => (
-        <p key={i} className="ending-text">{withName(paragraph, name).replace('{COUNT}', String(total))}</p>
-      ))}
+      <div className="ending-body">
+        {body.map((paragraph, i) => (
+          <p key={i} className="ending-text">{withName(paragraph, name).replace('{COUNT}', String(total))}</p>
+        ))}
+      </div>
       {recommendations && recommendations.length > 0 && (
         <div className="ending-recommendations">
           <p className="ending-rec-label">*recommended next steps:*</p>
