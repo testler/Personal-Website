@@ -30,7 +30,9 @@ export function AudioProvider({ children }) {
     const el = new Audio(musicSrc);
     el.loop = true;
     el.volume = MUSIC_VOLUME;
-    el.preload = 'auto';
+    // Don't compete with images/JS on first load — the 2 MB track is fetched
+    // when playback actually starts (first user gesture).
+    el.preload = 'none';
     musicRef.current = el;
     return () => {
       el.pause();

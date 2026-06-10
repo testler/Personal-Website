@@ -27,42 +27,205 @@
     Cache-Control = "public, max-age=0, must-revalidate"
     Content-Type = "application/json"
 
-# Legacy URL redirects (301 for SEO — tells crawlers these moved permanently)
+# Legacy URL redirects (301 for SEO — tells crawlers these moved permanently).
+# Keep this list in sync with src/content/routes.config.js, which handles the
+# same redirects client-side. Targets must be CURRENT slugs from
+# src/content/story-routing.config.js — never other legacy slugs.
+
 [[redirects]]
   from = "/personal-life"
-  to = "/about-intro"
+  to = "/personal-dossier"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/career"
-  to = "/experience-intro"
+  to = "/tech-career"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/education"
-  to = "/tech-intro"
+  to = "/my-stack"
   status = 301
-  force = true
 
 [[redirects]]
-  from = "/projects"
-  to = "/projects-intro"
+  from = "/projects-intro"
+  to = "/projects"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/contactMe"
   to = "/contact"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/about"
-  to = "/about-intro"
+  to = "/personal-dossier"
   status = 301
-  force = true
+
+[[redirects]]
+  from = "/about-intro"
+  to = "/personal-dossier"
+  status = 301
+
+[[redirects]]
+  from = "/resume-page"
+  to = "/resume"
+  status = 301
+
+[[redirects]]
+  from = "/start"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/in-a-hurry"
+  to = "/opening"
+  status = 301
+
+[[redirects]]
+  from = "/elevator-pitch"
+  to = "/personal-dossier"
+  status = 301
+
+[[redirects]]
+  from = "/about-origin"
+  to = "/personal-dossier"
+  status = 301
+
+[[redirects]]
+  from = "/hopes-and-dreams"
+  to = "/personal-dossier"
+  status = 301
+
+[[redirects]]
+  from = "/hobbies"
+  to = "/personal-dossier-2"
+  status = 301
+
+[[redirects]]
+  from = "/hobbies-garden"
+  to = "/nontech-career"
+  status = 301
+
+[[redirects]]
+  from = "/hobbies-maker"
+  to = "/personal-dossier-2"
+  status = 301
+
+[[redirects]]
+  from = "/hobbies-gaming"
+  to = "/personal-dossier-2"
+  status = 301
+
+[[redirects]]
+  from = "/hobbies-misc"
+  to = "/personal-dossier-2"
+  status = 301
+
+[[redirects]]
+  from = "/experience-intro"
+  to = "/tech-career"
+  status = 301
+
+[[redirects]]
+  from = "/software-career"
+  to = "/tech-career"
+  status = 301
+
+[[redirects]]
+  from = "/fundamental-experience"
+  to = "/nontech-career"
+  status = 301
+
+[[redirects]]
+  from = "/volunteer-experience"
+  to = "/nontech-career-2"
+  status = 301
+
+[[redirects]]
+  from = "/enterprise-projects"
+  to = "/projects"
+  status = 301
+
+[[redirects]]
+  from = "/frontend-projects"
+  to = "/projects"
+  status = 301
+
+[[redirects]]
+  from = "/backend-projects"
+  to = "/projects"
+  status = 301
+
+[[redirects]]
+  from = "/cyber-defense"
+  to = "/cyberdefense"
+  status = 301
+
+[[redirects]]
+  from = "/the-cube-experiment"
+  to = "/the-cube"
+  status = 301
+
+[[redirects]]
+  from = "/tech-intro"
+  to = "/my-stack"
+  status = 301
+
+[[redirects]]
+  from = "/rules-of-coding"
+  to = "/my-approach"
+  status = 301
+
+[[redirects]]
+  from = "/work-style"
+  to = "/my-approach"
+  status = 301
+
+[[redirects]]
+  from = "/least-favorite-tech"
+  to = "/my-stack-2"
+  status = 301
+
+[[redirects]]
+  from = "/personality-intro"
+  to = "/personal-dossier"
+  status = 301
+
+[[redirects]]
+  from = "/problem-solving"
+  to = "/my-approach"
+  status = 301
+
+[[redirects]]
+  from = "/why-this-format"
+  to = "/why-this-site"
+  status = 301
+
+[[redirects]]
+  from = "/faith"
+  to = "/personal-dossier"
+  status = 301
+
+[[redirects]]
+  from = "/family"
+  to = "/personal-dossier"
+  status = 301
+
+[[redirects]]
+  from = "/databases"
+  to = "/my-stack-2"
+  status = 301
+
+[[redirects]]
+  from = "/career-goals"
+  to = "/tech-career-3"
+  status = 301
+
+[[redirects]]
+  from = "/tech-list"
+  to = "/my-stack-2"
+  status = 301
 
 # SPA fallback (must be last)
 [[redirects]]

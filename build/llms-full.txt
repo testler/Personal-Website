@@ -5,7 +5,7 @@
 ## Snapshot
 
 - **Name:** Joshua Garst
-- **Role:** Full-Stack Developer II at Sharp Hue (Fayetteville, Arkansas)
+- **Role:** Full-Stack Developer III at Sharp Hue (Fayetteville, Arkansas)
 - **Location:** Bentonville, Arkansas (Northwest Arkansas)
 - **Professional experience:** 3+ years as a software engineer
 - **Primary stack:** .NET, C#, ASP.NET MVC, Razor Pages, JavaScript, React
@@ -18,9 +18,9 @@
 
 ## Professional Experience
 
-### Sharp Hue — Software Developer II (Fayetteville, AR)
+### Sharp Hue — Software Developer III (Fayetteville, AR)
 
-Joshua joined Sharp Hue as an apprentice after completing a six-month coding boot camp in 2021 while working full-time. He has since worked up to Software Developer II. His work focuses on:
+Joshua joined Sharp Hue as an apprentice after completing a six-month coding boot camp in 2021 while working full-time. He has since worked up to Software Developer III. His work focuses on:
 
 - Building and maintaining enterprise CRM systems on Microsoft Dynamics 365
 - Designing and shipping .NET Minimal APIs and Azure Functions

@@ -44,6 +44,10 @@
 
 .core-hub-label {
   position: absolute;
+  /* Parked offscreen until the frame loop positions it */
+  left: -9999px;
+  top: -9999px;
+  opacity: 0;
   transform: translate(-50%, -50%);
   background: rgba(2, 6, 23, 0.7);
   border: 1px solid rgba(148, 197, 230, 0.22);
@@ -59,13 +63,10 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
+  -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
-  transition: opacity 0.15s ease, transform 0.15s ease, border-color 0.2s ease, background 0.2s ease;
+  transition: border-color 0.2s ease, background 0.2s ease;
   pointer-events: none;
-}
-
-.core-hub-label.visible {
-  pointer-events: auto;
 }
 
 .core-hub-label.visited {
@@ -93,6 +94,40 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: rgba(125, 211, 252, 0.5);
+}
+
+/* Collapsible full destination list — keyboard/screen-reader navigation
+   and a reliable fallback on small screens */
+.core-hub-list {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.core-hub-list-summary {
+  cursor: pointer;
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(125, 211, 252, 0.6);
+  padding: 0.4rem 0;
+  list-style-position: inside;
+  transition: color 0.15s ease;
+}
+
+.core-hub-list-summary:hover {
+  color: rgba(125, 211, 252, 0.95);
+}
+
+.core-hub-list[open] .core-hub-list-summary {
+  color: rgba(125, 211, 252, 0.9);
+  margin-bottom: 0.5rem;
+}
+
+.core-hub-list .core-hub-group {
+  margin-bottom: 0.6rem;
 }
 
 @media (max-width: 600px) {

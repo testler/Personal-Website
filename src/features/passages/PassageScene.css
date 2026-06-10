@@ -1,6 +1,6 @@
 .passage-scene {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   height: 100dvh;
   overflow: hidden;
@@ -68,6 +68,7 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   padding: 7px 14px;
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   box-shadow: 0 0 20px rgba(0, 180, 255, 0.1);
 }
@@ -157,6 +158,7 @@
   line-height: 1.55;
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
   white-space: pre-line;
+  overflow-wrap: break-word;
 }
 
 .passage-typing-indicator {
@@ -310,6 +312,7 @@
   font-size: 15px;
   font-weight: 600;
   color: #ffffff;
+  overflow-wrap: anywhere;
 }
 
 .passage-extras-project-img {
@@ -595,11 +598,18 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 8px;
+    padding-right: 0;
   }
 
   .passage-choice {
-    font-size: 12px;
-    padding: 9px 10px;
+    font-size: 13px;
+    padding: 10px 12px;
+    min-height: 44px;
+  }
+
+  /* Don't leave a lone half-width button on odd counts */
+  .passage-choices .passage-choice:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
   }
 
   /* Extras on mobile */
@@ -617,7 +627,7 @@
   }
 
   .passage-extras-contact {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 
   /* Scene tag positioning */
@@ -684,6 +694,7 @@
   letter-spacing: 0.08em;
   padding: 7px 14px;
   cursor: pointer;
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   transition: border-color 170ms ease, background 170ms ease;
 }
@@ -923,9 +934,12 @@
     grid-template-columns: 1fr;
   }
 
+  /* Below the audio toggle so it can't collide with the scene tag */
   .passage-signal-banner {
     font-size: 10px;
     padding: 5px 10px;
+    top: calc(max(14px, env(safe-area-inset-top)) + 54px);
+    right: max(14px, env(safe-area-inset-right));
   }
 
   .passage-scene--press-start .passage-text:first-of-type {

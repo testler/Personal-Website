@@ -222,11 +222,7 @@
   }
 }
 
-/* Focus Styles */
-:focus {
-  outline: 2px solid var(--primary-color);
-  outline-offset: 2px;
-}
+/* Focus styles live in App.css as :focus-visible (keyboard only) */
 
 /* Touch Device Optimizations */
 @media (hover: none) and (pointer: coarse) {

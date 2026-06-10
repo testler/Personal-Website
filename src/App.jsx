@@ -83,7 +83,7 @@ function AppContent() {
         )}
       </button>
 
-      <main className="app-main">
+      <main id="main-content" className="app-main">
         <Suspense fallback={<LoadingFallback />}>
           <Routes>
             <Route path="/" element={<Home />} />

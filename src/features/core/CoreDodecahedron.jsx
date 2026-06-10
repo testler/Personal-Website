@@ -4,13 +4,20 @@ import * as THREE from 'three';
 
 const RADIUS = 2;
 const FACE_DISC_RADIUS = 0.85;
+const LABEL_OFFSET = 1.15;
+const TAP_MAX_DRIFT_PX = 8;
 const VISITED_COLOR = '#22c55e';
 const VISITED_EMISSIVE = '#16a34a';
 const UNVISITED_COLOR = '#1e3a8a';
 const UNVISITED_EMISSIVE = '#0ea5e9';
 
+// Scratch vectors reused every frame to avoid per-frame allocations
+const _camDir = new THREE.Vector3();
+const _worldDir = new THREE.Vector3();
+const _worldPos = new THREE.Vector3();
+
 function getAnchorVectors() {
-  const geo = new THREE.DodecahedronGeometry(1, 0).toNonIndexed();
+  const geo = new THREE.DodecahedronGeometry(1, 0);
   const pos = geo.attributes.position.array;
   const uniqueNormals = [];
 
@@ -50,9 +57,10 @@ function quaternionForOutwardNormal(dir) {
 export default function CoreDodecahedron({
   faces,
   onFaceSelect,
-  onLabelsUpdate,
+  labelElsRef,
   selectedFaceId = '',
   visitedIds,
+  interactingRef,
 }) {
   const groupRef = useRef();
   const shellRef = useRef();
@@ -107,16 +115,28 @@ export default function CoreDodecahedron({
     faceDiscGeometry.dispose();
   }, [shellGeometry, edgesGeometry, selectedRingGeometry, faceDiscGeometry]);
 
+  // A tap selects; a drag (pointer drifted past the threshold) only rotates.
+  const handleTap = (event, face) => {
+    event.stopPropagation();
+    if (event.delta > TAP_MAX_DRIFT_PX) return;
+    onFaceSelect?.(face);
+  };
+
   useFrame((state, delta) => {
     if (!groupRef.current) return;
 
     timeRef.current += delta;
-    groupRef.current.rotation.y += 0.004;
-    groupRef.current.rotation.x += 0.0018;
+
+    // Idle spin pauses while the user is orbiting, and while a face is
+    // selected so the tap-again-to-confirm target doesn't drift away.
+    if (!interactingRef?.current && !selectedFaceId) {
+      groupRef.current.rotation.y += 0.24 * delta;
+      groupRef.current.rotation.x += 0.11 * delta;
+    }
 
     if (ringRef.current) {
-      ringRef.current.rotation.z += 0.01;
-      ringRef.current.rotation.y += 0.002;
+      ringRef.current.rotation.z += 0.6 * delta;
+      ringRef.current.rotation.y += 0.12 * delta;
     }
 
     pulseRef.current = Math.max(0, pulseRef.current - delta * 2.4);
@@ -149,47 +169,43 @@ export default function CoreDodecahedron({
       mat.opacity = 0.78 + Math.sin(timeRef.current * 3) * 0.18;
     }
 
-    if (!onLabelsUpdate) return;
+    // Project each face anchor to screen space and position its DOM label
+    // imperatively — no React re-renders in the frame loop.
+    const labelEls = labelElsRef?.current;
+    if (!labelEls) return;
 
-    const camDir = new THREE.Vector3();
-    camera.getWorldDirection(camDir);
+    camera.getWorldDirection(_camDir);
 
-    const labels = faceAnchors.map(({ face, dir }) => {
-      const worldDir = dir.clone().applyQuaternion(groupRef.current.quaternion).normalize();
-      const facing = worldDir.dot(camDir);
+    for (const { face, dir } of faceAnchors) {
+      const el = labelEls.get(face.id);
+      if (!el) continue;
 
-      const worldPos = dir
-        .clone()
-        .multiplyScalar(RADIUS + 1.4)
-        .applyMatrix4(groupRef.current.matrixWorld);
-      const ndc = worldPos.project(camera);
-      const visible = facing < -0.5 && ndc.z > -1 && ndc.z < 1;
+      _worldDir.copy(dir).applyQuaternion(groupRef.current.quaternion).normalize();
+      const facing = _worldDir.dot(_camDir);
 
-      const x = (ndc.x * 0.5 + 0.5) * size.width;
-      const y = (-ndc.y * 0.5 + 0.5) * size.height;
-      const opacity = visible ? Math.min(1, Math.max(0.55, -facing * 1.8)) : 0;
+      _worldPos
+        .copy(dir)
+        .multiplyScalar(RADIUS + LABEL_OFFSET)
+        .applyMatrix4(groupRef.current.matrixWorld)
+        .project(camera);
 
-      return {
-        id: face.id,
-        label: face.label,
-        color: face.color,
-        x,
-        y,
-        opacity,
-        visible,
-        selected: face.id === selectedFaceId,
-        visited: visitedSet.has(face.id),
-      };
-    });
+      const visible = facing < -0.5 && _worldPos.z > -1 && _worldPos.z < 1;
+      const x = (_worldPos.x * 0.5 + 0.5) * size.width;
+      const y = (-_worldPos.y * 0.5 + 0.5) * size.height;
 
-    onLabelsUpdate(labels);
+      el.style.left = `${x}px`;
+      el.style.top = `${y}px`;
+      el.style.opacity = visible ? String(Math.min(1, Math.max(0.55, -facing * 1.8))) : '0';
+      el.style.pointerEvents = visible ? 'auto' : 'none';
+    }
   });
 
   return (
     <group ref={groupRef}>
       <mesh
         ref={shellRef}
-        onPointerDown={(event) => {
+        onClick={(event) => {
+          if (event.delta > TAP_MAX_DRIFT_PX) return;
           event.stopPropagation();
           if (!groupRef.current) return;
 
@@ -225,12 +241,7 @@ export default function CoreDodecahedron({
         const emissive = isVisited ? VISITED_EMISSIVE : UNVISITED_EMISSIVE;
         return (
           <group key={face.id} position={position} quaternion={quaternion}>
-            <mesh
-              onPointerDown={(event) => {
-                event.stopPropagation();
-                onFaceSelect?.(face);
-              }}
-            >
+            <mesh onClick={(event) => handleTap(event, face)}>
               <primitive attach="geometry" object={faceDiscGeometry} />
               <meshStandardMaterial
                 color={baseColor}

@@ -5,52 +5,44 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-npm start              # dev server (localhost:3000)
+npm start              # Vite dev server (localhost:3000)
 npm run build          # production build → build/
-npm test -- --env=jsdom            # run tests
-npm test -- --env=jsdom --testPathPattern=App  # run single test file
+npm run preview        # serve the production build locally
 ```
 
-Deployed to Netlify (`joshua-garst-portfolio-website.netlify.app`). The `netlify.toml` defines SPA redirect rules, cache headers, and security headers. All routes redirect to `/index.html` for client-side routing.
+There is no test runner configured. Verify changes with `npm run build` plus manual checks in the browser.
+
+Deployed to Netlify (`joshua-garst-portfolio-website.netlify.app`). `netlify.toml` defines the SPA fallback, cache/security headers, and **301 redirects for legacy URLs — keep those in sync with `src/content/routes.config.js`**, and always point them at current slugs from `story-routing.config.js`, never at other legacy slugs.
 
 ## Architecture
 
-This is a React 18 interactive portfolio with a graphic-novel / game-like UX metaphor. All pages lazy-load via `React.lazy`.
+React 19 + Vite. An interactive "graphic-novel / game" portfolio: the entire site is a Twine-style passage graph rendered by one scene component. React Router has only two real routes — `/` (Home, which renders the press-start or welcome-back passage) and `/:passageSlug` (everything else) — plus client-side `<Navigate>` redirects for legacy URLs.
 
-### Two distinct UI modes
+### Passage system (the whole site)
 
-**Core (Home `/`)** — A Three.js dodecahedron rendered with `@react-three/fiber`. Users navigate by clicking faces. The home page runs a multi-phase intro dialogue sequence before revealing the 3D scene. No NavBar is shown on the home route.
-
-**Chapters (`/career`, `/personal-life`, etc.)** — Standard scrollable pages sharing a `ChapterLayout` wrapper (`src/features/chapters/ChapterLayout.jsx`). Each chapter has a `GuideCharacter` that surfaces contextual dialogue. The NavBar appears on all chapter routes.
-
-### Key directories
-
-- `src/content/` — All static data/config. Edit here to update site copy, routes, or dialogue:
-  - `chapters.config.js` — Per-chapter content (dialogue, timeline, cards, items)
-  - `dialogue.config.js` — Core intro sequences and intent gate options
-  - `core-faces.config.js` — Dodecahedron face definitions (label, type, route/href)
-  - `story-map.config.js` / `story-routing.config.js` — Passage-to-route mapping
-  - `routes.config.js` — Route registry and nav order
-
-- `src/features/` — Feature-level logic separated by concern:
-  - `core/` — `CoreScene.jsx` (3D home page orchestrator), `CoreDodecahedron.jsx`
-  - `chapters/` — `ChapterLayout.jsx` (shared chapter wrapper), `ChapterChoicePanel.jsx`
-  - `guide/` — `GuideCharacter.jsx` (floating avatar with chapter dialogue)
-  - `audio/` — `AudioProvider.jsx` (React context for background music toggle)
-  - `intent-gate/` — `IntentGatePanel.jsx` (command panel on the Core after intro)
-
-- `src/pages/` — One folder per route. Most pages consume `CHAPTERS_CONTENT` from `chapters.config.js` and render through `ChapterLayout`.
-
-- `src/theme/tokens.css` — CSS custom properties for the design system.
+- `src/features/passages/PassageScene.jsx` — renders every passage: character art, dialogue paragraphs (with `$name` / `{NAME_COMMA}` / `{TIME_MODE}` / `{TYPING_SFX}` token substitution), choice buttons, name input, per-passage SEO meta, and the "next destination" suggestion.
+- `src/features/passages/CoreHubScene.jsx` + `src/features/core/CoreDodecahedron.jsx` — the 3D dodecahedron hub shown inside the `the-core` passage (`/core`). Tap a face (or its floating label) to select, tap again to confirm and navigate. Labels are DOM buttons positioned imperatively from the frame loop (never via per-frame React state). A collapsible "All destinations" list below the canvas is the keyboard/screen-reader navigation path.
+- `src/features/passages/DynamicEnding.jsx` — 3-tier ending (`/ending`) chosen by how many destinations were visited.
+- `src/features/passages/PassageExtras.jsx` — per-passage bonus UI (resume downloads, contact links, project showcases) keyed by passage id.
+- `src/features/tracking/VisitTrackerProvider.jsx` — player name + visited-destination set, persisted to localStorage. A destination only counts as visited on the passage carrying its `visitKey` (the *last* passage of each section, by design). `hasSignal` (≥3 visited) surfaces the ending banner.
+- `src/features/audio/AudioProvider.jsx` — global music toggle; music starts on first user gesture, fetched on demand.
 
 ### Content vs. code
 
-Site copy (bio text, dialogue, career details, project descriptions) lives entirely in `src/content/`. Pages and features are mostly presentational wrappers around that config data. When updating site content, edit `src/content/` files rather than page components.
+All copy and the dialogue graph live in `src/content/`. Edit these, not components, to change site content:
 
-### Audio
+- `story-map.config.js` — every passage node: prompt, paragraphs, choices (`toPassage` / `href`), `photoKey`, `visitKey`, flags (`isCoreHub`, `isEnding`, `nameInput`, `showNextDestination`). Also `DESTINATION_KEYS` / `DESTINATION_TO_PASSAGE` (the 12 trackable destinations).
+- `story-routing.config.js` — passage id ↔ URL slug map. **Every node must have a slug here.**
+- `core-faces.config.js` — the 12 dodecahedron faces; `id` must match a `DESTINATION_KEYS` entry so visited state lights up.
+- `routes.config.js` — legacy-URL client redirects (mirrored as 301s in `netlify.toml`).
+- `passage-extras.config.js` — passage id → extras panel config.
 
-`AudioProvider` wraps the app in `src/index.js`. Music state is global and toggled by the floating button in `AppContent`. The Core intro also plays a typing SFX on dialogue advance.
+Adding a passage = add the node in `story-map.config.js` + a slug in `story-routing.config.js`; if it ends a new section, give it a `visitKey` and add the destination to `DESTINATION_KEYS`, `DESTINATION_TO_PASSAGE`, and (if it gets a face) `core-faces.config.js`. Character photos are mapped from `photoKey` in `STORY_PHOTOS` inside `PassageScene.jsx`.
 
-### Guide character
+### SEO / static files
 
-Each chapter page passes `guideEnabled` (persisted to `localStorage`) down to `ChapterLayout`, which renders `GuideCharacter`. Guide dialogue options per chapter are defined in `chapters.config.js` under the `dialogue` key.
+`index.html` carries static meta, JSON-LD, and a full `<noscript>` resume. `public/` holds `sitemap.xml`, `robots.txt`, `llms.txt`, `llms-full.txt`, manifest/icons, and a self-destructing `service-worker.js` (kills the old CRA-era SW — keep it). When career facts change (title, role), update: `story-map.config.js`, `index.html` (meta + noscript), `SchemaMarkup.jsx`, and both `llms*.txt` files.
+
+### Styling
+
+Plain CSS per feature (`PassageScene.css`, `CoreHubScene.css`, `App.css`) over design tokens in `src/theme/tokens.css` and `src/styles/variables.css`. Mobile (≤768px) switches to a vertical layout: character art as background, dialogue panel overlaid with a gradient, choices in a 2-column grid (last odd item spans full width). Desktop pins viewport height; mobile allows page scroll.

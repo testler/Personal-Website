@@ -247,7 +247,7 @@ export default function PassageScene() {
             className="passage-character-img"
             width="1024"
             height="1536"
-            fetchpriority="high"
+            fetchPriority="high"
             decoding="async"
           />
         </div>
