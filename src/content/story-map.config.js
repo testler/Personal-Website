@@ -31,7 +31,7 @@ const STORY_MAP = {
       prompt: 'JOSHUA GARST',
       paragraphs: [
         'Portfolio Site // v1.0',
-        'Full-Stack Developer II in Bentonville, Arkansas.\nSpecializing in .NET, Razor Pages, and React.\nCurrently at Sharp Hue, shipping production software for real clients.',
+        'Full-Stack Developer III in Bentonville, Arkansas.\nSpecializing in .NET, Razor Pages, and React.\nCurrently at Sharp Hue, shipping production software for real clients.',
       ],
       photoKey: 'press_start',
       visitKey: 'Press Start',
@@ -413,7 +413,7 @@ const STORY_MAP = {
       title: 'Tech Career',
       prompt: '*loading career log // chapter 1*',
       paragraphs: [
-        'I started at Sharp Hue in February 2023 as an apprentice. Three months in, they converted me to full-time. Since then I have been promoted twice and I am on track for Dev III this summer.',
+        'I started at Sharp Hue in February 2023 as an apprentice. Three months in, they converted me to full-time. Since then I have been promoted three times, most recently to Dev III.',
         'Sharp Hue is a small consultancy in Fayetteville, which means I do not get to hide behind a title. I scope projects with clients, make the architectural calls, ship the code, and mentor the developers behind me. On any given day I am part engineer, part project manager, part technical consultant.',
       ],
       photoKey: 'tech_career',

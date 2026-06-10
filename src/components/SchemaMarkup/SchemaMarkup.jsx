@@ -91,7 +91,7 @@ const SchemaMarkup = () => {
         "name": "How did Joshua Garst become a software engineer?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Joshua Garst transitioned to software engineering through a coding boot camp in 2021. After six months of intensive training while working full-time, he landed a position at Sharp Hue starting as an apprentice and working up to Software Developer II. Before software, he held various roles including delivery driver, solar lead setter, and logistics coordinator."
+          "text": "Joshua Garst transitioned to software engineering through a coding boot camp in 2021. After six months of intensive training while working full-time, he landed a position at Sharp Hue starting as an apprentice and working up to Software Developer III. Before software, he held various roles including delivery driver, solar lead setter, and logistics coordinator."
         }
       },
       {
