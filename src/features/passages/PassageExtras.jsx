@@ -1,5 +1,56 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import PASSAGE_EXTRAS from '../../content/passage-extras.config';
+import { resolveRouteForPassage } from '../../content/story-routing.config';
+
+function HeroPanel({ bullets, chips, quickLinksLabel, quickLinks }) {
+  const navigate = useNavigate();
+  return (
+    <div className="passage-extras passage-extras-hero">
+      {bullets && bullets.length > 0 && (
+        <ul className="hero-bullets">
+          {bullets.map((bullet) => (
+            <li key={bullet} className="hero-bullet">{bullet}</li>
+          ))}
+        </ul>
+      )}
+      {chips && chips.length > 0 && (
+        <ul className="hero-chips" aria-label="Core technologies">
+          {chips.map((chip) => (
+            <li key={chip} className="hero-chip">{chip}</li>
+          ))}
+        </ul>
+      )}
+      {quickLinks && quickLinks.length > 0 && (
+        <div className="hero-quick-links">
+          {quickLinksLabel && <span className="hero-quick-links-label">{quickLinksLabel}</span>}
+          {quickLinks.map((link) =>
+            link.href ? (
+              <a
+                key={link.label}
+                href={link.href}
+                target={link.external ? '_blank' : undefined}
+                rel={link.external ? 'noopener noreferrer' : undefined}
+                className="passage-extras-link hero-quick-link"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <button
+                key={link.label}
+                type="button"
+                className="passage-extras-link hero-quick-link"
+                onClick={() => navigate(resolveRouteForPassage(link.toPassage))}
+              >
+                {link.label}
+              </button>
+            )
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
 
 function DownloadPanel({ items, links }) {
   return (
@@ -88,6 +139,15 @@ export default function PassageExtrasRenderer({ passageId }) {
   if (!extras) return null;
 
   switch (extras.type) {
+    case 'hero':
+      return (
+        <HeroPanel
+          bullets={extras.bullets}
+          chips={extras.chips}
+          quickLinksLabel={extras.quickLinksLabel}
+          quickLinks={extras.quickLinks}
+        />
+      );
     case 'downloads':
       return <DownloadPanel items={extras.items} links={extras.links} />;
     case 'contact-links':

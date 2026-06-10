@@ -29,15 +29,14 @@ const STORY_MAP = {
       sceneLabel: 'Press Start',
       title: 'Press Start',
       prompt: 'JOSHUA GARST',
-      paragraphs: [
-        'Portfolio Site // v1.0',
-        'Full-Stack Developer III in Bentonville, Arkansas.\nSpecializing in .NET, Razor Pages, and React.\nCurrently at Sharp Hue, shipping production software for real clients.',
-      ],
+      paragraphs: [],
+      metaDescription:
+        'Full-Stack Developer III at Sharp Hue in Northwest Arkansas. .NET, Razor Pages, and React — shipping production software since 2023.',
       photoKey: 'press_start',
       visitKey: 'Press Start',
       isPressStart: true,
       choices: [
-        { label: 'Tap to enter', toPassage: 'opening' },
+        { label: '▶ Press Start', toPassage: 'opening' },
       ],
     },
 
@@ -63,16 +62,28 @@ const STORY_MAP = {
       prompt: 'Hi there! Sorry, give me just a second, I am just wrapping something up...',
       paragraphs: [
         '*{TYPING_SFX}*',
-        'Okay! Ready now. What brings you by?',
       ],
       photoKeyByTime: { working: 'opening_working', gaming: 'opening_gaming' },
       choices: [
-        { label: 'Wait patiently', toPassage: 'main-intro-1' },
+        { label: 'Wait patiently', toPassage: 'opening-ready' },
         { label: 'I am sorry, I am in a hurry', toPassage: 'straight-to-core' },
         { label: 'What? You are virtual, what could you possibly be working on?', toPassage: 'smart-intro' },
         { label: 'Take me to your LinkedIn', toPassage: 'linkedin-1' },
         { label: 'Just need a resume', toPassage: 'resume-1' },
         { label: 'Just contact information please', toPassage: 'contact-me' },
+      ],
+    },
+
+    'opening-ready': {
+      sceneLabel: 'Opening',
+      title: 'Opening',
+      prompt: 'Okay! Ready now — thanks for waiting. So, what brings you by?',
+      paragraphs: [],
+      photoKey: 'smart_intro',
+      choices: [
+        { label: 'Go ahead, introduce yourself', toPassage: 'main-intro-1' },
+        { label: 'Skip the intro — just show me around', toPassage: 'straight-to-core' },
+        { label: 'Just here for the resume', toPassage: 'resume-1' },
       ],
     },
 

@@ -7,6 +7,7 @@ const PASSAGE_ROUTE_MAP = {
   'press-start': '/',
   'welcome-back': '/welcome-back',
   opening: '/opening',
+  'opening-ready': '/opening-2',
   'smart-intro': '/smart-intro',
   'straight-to-core': '/straight-to-core',
   'main-intro-1': '/intro',

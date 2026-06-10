@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState, Suspense } from 'react';
+import React, { useEffect, useMemo, useRef, useState, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import STORY_MAP, { DESTINATION_TO_PASSAGE } from '../../content/story-map.config';
@@ -155,6 +155,16 @@ export default function PassageScene() {
   }, [passage, timeMode]);
   const photoSrc = photoKey ? (STORY_PHOTOS[photoKey] || DEFAULT_PHOTO) : DEFAULT_PHOTO;
 
+  // Keep the character image invisible until it has decoded so browsers
+  // never paint its alt text / placeholder glyph into the empty panel.
+  const photoImgRef = useRef(null);
+  const [photoLoaded, setPhotoLoaded] = useState(false);
+
+  useEffect(() => {
+    const el = photoImgRef.current;
+    setPhotoLoaded(!!(el && el.complete && el.naturalWidth > 0));
+  }, [photoSrc]);
+
   const handleChoice = (choice) => {
     if (choice.resetPlayer) {
       resetPlayer();
@@ -220,7 +230,7 @@ export default function PassageScene() {
         <meta property="og:title" content={helmetTitle} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:type" content="article" />
+        <meta property="og:type" content={isHome ? 'website' : 'article'} />
         <meta name="twitter:title" content={helmetTitle} />
         <meta name="twitter:description" content={description} />
       </Helmet>
@@ -242,19 +252,21 @@ export default function PassageScene() {
       <div className="passage-layout">
         <div className="passage-character-panel">
           <img
+            ref={photoImgRef}
             src={photoSrc}
             alt="Joshua Garst"
-            className="passage-character-img"
+            className={`passage-character-img ${photoLoaded ? 'is-loaded' : ''}`}
             width="1024"
             height="1536"
             fetchPriority="high"
             decoding="async"
+            onLoad={() => setPhotoLoaded(true)}
           />
         </div>
 
         <div className="passage-dialogue-panel">
           <div className="passage-speaker-badge">
-            {passage.isPressStart ? 'JOSHUA GARST // v1.0' : 'Joshua Garst'}
+            {passage.isPressStart ? 'PORTFOLIO // v1.0' : 'Joshua Garst'}
           </div>
 
           <div className="passage-text-area">

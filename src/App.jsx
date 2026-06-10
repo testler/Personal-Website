@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
 import SchemaMarkup from './components/SchemaMarkup/SchemaMarkup';
 import SkipLink from './components/SkipLink/SkipLink';
@@ -19,43 +19,22 @@ function LoadingFallback() {
 
 function AppContent() {
   const { enabled: musicEnabled, toggle: toggleMusic } = useAudio();
-  const location = useLocation();
-  const canonicalUrl = `${SITE_URL}${location.pathname === '/' ? '' : location.pathname}`;
 
   return (
     <div className="app">
+      {/* Site-wide singleton meta only. Title, description, canonical,
+          og:title/description/url and twitter:title/description are owned
+          per-page by PassageScene — defining them here too creates duplicate
+          tags (react-helmet-async does not dedupe across instances). */}
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Joshua Garst | Full-Stack Software Engineer — Interactive Portfolio</title>
-        <meta
-          name="description"
-          content="Joshua Garst is a full-stack .NET software engineer with 3+ years experience in enterprise CRM, Azure, C#, and JavaScript. Explore his interactive graphic-novel portfolio."
-        />
         <meta name="author" content="Joshua Garst" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="canonical" href={canonicalUrl} />
-
-        {/* Open Graph */}
-        <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Joshua Garst Portfolio" />
-        <meta property="og:title" content="Joshua Garst | Full-Stack Software Engineer" />
-        <meta
-          property="og:description"
-          content="An immersive graphic-novel portfolio showcasing full-stack engineering, projects, and career — built with React and Three.js."
-        />
-        <meta property="og:url" content={canonicalUrl} />
         <meta property="og:image" content={`${SITE_URL}/og-preview.jpg`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:locale" content="en_US" />
-
-        {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Joshua Garst | Full-Stack Software Engineer" />
-        <meta
-          name="twitter:description"
-          content="An immersive graphic-novel portfolio showcasing full-stack engineering, projects, and career."
-        />
         <meta name="twitter:image" content={`${SITE_URL}/og-preview.jpg`} />
       </Helmet>
 

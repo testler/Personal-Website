@@ -100,6 +100,13 @@
   object-position: bottom center;
   filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.6));
   animation: character-idle 4s ease-in-out infinite;
+  /* Hidden until decoded (see PassageScene.jsx) so alt text never flashes */
+  opacity: 0;
+  transition: opacity 400ms ease;
+}
+
+.passage-character-img.is-loaded {
+  opacity: 1;
 }
 
 @keyframes character-idle {
@@ -679,6 +686,106 @@
   text-shadow: 0 2px 12px rgba(255, 215, 0, 0.4), 0 0 40px rgba(255, 215, 0, 0.2);
 }
 
+/* Press Start hero: bullets + tech chips + quick links (glance layer) */
+.hero-bullets {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hero-bullet {
+  position: relative;
+  padding-left: 20px;
+  color: #eaf4ff;
+  font-size: clamp(15px, 1.3vw, 19px);
+  line-height: 1.4;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero-bullet::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #8be4ff;
+}
+
+.hero-chips {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-chip {
+  border: 1px solid rgba(120, 200, 255, 0.45);
+  border-radius: 999px;
+  background: rgba(5, 17, 36, 0.7);
+  color: #9bdcff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  white-space: nowrap;
+}
+
+.hero-quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 16px;
+  margin-top: 2px;
+}
+
+.hero-quick-links-label {
+  color: #b0dcff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+/* Internal quick links are <button>s — strip button chrome so they
+   read exactly like the anchor variant */
+button.hero-quick-link {
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Primary CTA: big, gold, unmistakable */
+.passage-scene--press-start .passage-choice {
+  text-align: center;
+  font-size: clamp(15px, 1.4vw, 18px);
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 14px 22px;
+  color: #ffe080;
+  border-color: rgba(255, 215, 0, 0.55);
+  background: linear-gradient(160deg, rgba(40, 30, 8, 0.92), rgba(58, 43, 12, 0.88));
+  animation: press-start-pulse 2.4s ease-in-out infinite;
+}
+
+.passage-scene--press-start .passage-choice:hover {
+  border-color: rgba(255, 230, 110, 0.9);
+  background: linear-gradient(160deg, rgba(58, 44, 12, 0.95), rgba(76, 57, 16, 0.92));
+  box-shadow: 0 0 26px rgba(255, 215, 0, 0.35), 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
 /* ── Signal banner ── */
 .passage-signal-banner {
   position: absolute;
@@ -964,6 +1071,15 @@
     font-size: 14px;
     padding: 6px 14px;
     letter-spacing: 0.18em;
+  }
+
+  .hero-chips {
+    gap: 6px;
+  }
+
+  .hero-chip {
+    font-size: 11px;
+    padding: 4px 10px;
   }
 
   .passage-scene--core .passage-dialogue-panel {

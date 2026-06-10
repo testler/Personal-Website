@@ -26,7 +26,25 @@ const CONTACT_LINKS = {
   ],
 };
 
+const PRESS_START_HERO = {
+  type: 'hero',
+  bullets: [
+    'Full-Stack Developer III at Sharp Hue',
+    'Northwest Arkansas',
+    'Shipping production software since 2023',
+  ],
+  chips: ['C# / .NET', 'Razor Pages', 'React', 'Azure'],
+  quickLinksLabel: 'In a hurry?',
+  quickLinks: [
+    { label: 'Resume', toPassage: 'resume-1' },
+    { label: 'Projects', toPassage: 'projects-1' },
+    { label: 'Contact', toPassage: 'contact-me' },
+    { label: 'GitHub', href: 'https://github.com/testler', external: true },
+  ],
+};
+
 const PASSAGE_EXTRAS = {
+  'press-start': PRESS_START_HERO,
   'resume-1': RESUME_DOWNLOADS,
   'resume-3': RESUME_DOWNLOADS,
   'contact-me': CONTACT_LINKS,
