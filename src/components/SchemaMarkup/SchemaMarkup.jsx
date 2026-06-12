@@ -11,7 +11,7 @@ const SchemaMarkup = () => {
     "givenName": "Joshua",
     "familyName": "Garst",
     "url": SITE_URL,
-    "jobTitle": "Full-Stack Software Engineer",
+    "jobTitle": "Software Engineer III",
     "description": "Full-stack .NET software engineer with 3+ years professional experience in enterprise CRM systems, Azure cloud services, C#, and JavaScript. Builds reliable, data-driven systems that real people rely on every day.",
     "email": "joshuagarst@gmail.com",
     "image": `${SITE_URL}/og-preview.jpg`,
@@ -91,7 +91,7 @@ const SchemaMarkup = () => {
         "name": "How did Joshua Garst become a software engineer?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Joshua Garst transitioned to software engineering through a coding boot camp in 2021. After six months of intensive training while working full-time, he landed a position at Sharp Hue starting as an apprentice and working up to Software Developer III. Before software, he held various roles including delivery driver, solar lead setter, and logistics coordinator."
+          "text": "Joshua Garst transitioned to software engineering through a coding boot camp in 2021. After six months of intensive training while working full-time, he landed a position at Sharp Hue starting as a Software Engineer apprentice and working up to Software Engineer III. Before software, he held various roles including delivery driver, solar lead setter, and logistics coordinator."
         }
       },
       {

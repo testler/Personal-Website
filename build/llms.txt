@@ -1,6 +1,6 @@
 # Joshua Garst
 
-> Full-Stack Software Engineer based in Northwest Arkansas. Full-Stack Developer III at Sharp Hue (Fayetteville, AR). 3+ years of professional experience in .NET, C#, ASP.NET, Azure, JavaScript, and React.
+> Full-Stack Software Engineer based in Northwest Arkansas. Software Engineer III at Sharp Hue (Fayetteville, AR). 3+ years of professional experience in .NET, C#, ASP.NET, Azure, JavaScript, and React.
 
 This site is an interactive graphic-novel-style portfolio. Content is organized into passages navigable from a central hub called The Core. The canonical, machine-readable content overview is in `/llms-full.txt`.
 

@@ -29,7 +29,7 @@ const CONTACT_LINKS = {
 const PRESS_START_HERO = {
   type: 'hero',
   bullets: [
-    'Full-Stack Developer III at Sharp Hue',
+    'Software Engineer III at Sharp Hue',
     'Northwest Arkansas',
     'Shipping production software since 2023',
   ],
